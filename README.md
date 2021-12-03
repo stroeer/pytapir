@@ -20,7 +20,6 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-boto3 = "*"
 pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.0.1"}
 ```
 

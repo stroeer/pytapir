@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 
-import pytapir
+import stroeer
 from setuptools import setup, find_packages, Command
 
 tests_require = []
@@ -63,24 +63,24 @@ class BuildPackageCommand(Command):
                           'grpc_tools.protoc',
                           '--proto_path={}'.format(inclusion_root),
                           '--proto_path={}'.format(well_known_protos_include),
-                          '--python_out={}'.format('./pytapir'),
-                          '--grpc_python_out={}'.format('./pytapir'),
+                          '--python_out={}'.format('.'),
+                          '--grpc_python_out={}'.format('.'),
                       ] + [proto_file]
             if protoc.main(command) != 0:
                 raise Exception('error: {} failed'.format(command))
 
-
+print(f"packages = {find_packages(include=['pytapir', 'pytapir.*'])}")
 setup(
     name='pytapir',
-    version=pytapir.__version__,
-    description=pytapir.__doc__.strip(),
+    version=stroeer.__version__,
+    description=stroeer.__doc__.strip(),
     long_description=long_description(),
     long_description_content_type='text/markdown',
     url='https://pytapir.io/',
-    download_url=f'https://github.com/stroeer/pytapir/archive/{pytapir.__version__}.tar.gz',
-    author=pytapir.__author__,
+    download_url=f'https://github.com/stroeer/pytapir/archive/{stroeer.__version__}.tar.gz',
+    author=stroeer.__author__,
     author_email='none@example.com',
-    license=pytapir.__licence__,
+    license=stroeer.__licence__,
     packages=find_packages(include=['pytapir', 'pytapir.*']),
     python_requires='>=3.8',
     extras_require=extras_require,

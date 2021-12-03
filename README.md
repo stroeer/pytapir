@@ -12,7 +12,7 @@ A general [API documentation can be found here](https://stroeer.github.io/tapir/
 
 [untested]
 
-`pipenv install -e git+https://github.com:stroeer/pytapir.git@b937708bf3e642b8cf50a74136f2088cbf520ea9#egg=requests`
+`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.0.1#egg=requests`
 
 ## `pipenv`
 
@@ -21,19 +21,36 @@ This should go into the `Pipfile`
 ```shell
 [packages]
 boto3 = "*"
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "b937708bf3e642b8cf50a74136f2088cbf520ea9"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.0.1"}
 ```
 
-# Release
+# Update tapir
+
+tapir is mounted as a git submodule
 
 ```shell
-NEXT_TAG='v0.0.1'
 
 # bump tapir to latest
 git submodule update --init --recursive
 
 # commit changes
-git commit -a -m "bumped tapir to latest"
+git add tapir
+
+# if there are changes, commit and push them:
+git commit -m "bumped tapir to latest"
+git push
+
+```
+
+# Release
+
+
+```shell
+NEXT_TAG='v0.0.1'
+
+# pull latest from remote
+git fetch --all --tags --prune
+git switch main
 
 # compile protobuf sources to python
 python3 setup.py protoc
@@ -53,6 +70,6 @@ if [ ! -z "${GITHUB_TOKEN}" ] ; then
       --header "Authorization: token ${GITHUB_TOKEN}" 	\
       --header "Accept: application/vnd.github.v3+json"	\
       --data "{\"tag_name\":\"${NEXT_TAG}\",\"generate_release_notes\":true}" \
-      https://api.github.com/repos/stroeer/tapir/releases
+      https://api.github.com/repos/stroeer/pytapir/releases
 fi
 ```

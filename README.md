@@ -46,7 +46,7 @@ git push
 
 
 ```shell
-NEXT_TAG='v0.0.2'
+NEXT_TAG='v0.0.3'
 
 # pull latest from remote
 git fetch --all --tags --prune

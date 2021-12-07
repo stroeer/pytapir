@@ -69,7 +69,7 @@ class BuildPackageCommand(Command):
             if protoc.main(command) != 0:
                 raise Exception('error: {} failed'.format(command))
 
-print(f"packages = {find_packages(include=['pytapir', 'pytapir.*'])}")
+print(f"packages = {find_packages(include=['stroeer', 'stroeer.*'])}")
 setup(
     name='pytapir',
     version=stroeer.__version__,
@@ -81,7 +81,7 @@ setup(
     author=stroeer.__author__,
     author_email='none@example.com',
     license=stroeer.__licence__,
-    packages=find_packages(include=['pytapir', 'pytapir.*']),
+    packages=find_packages(include=['stroeer', 'stroeer.*']),
     python_requires='>=3.8',
     extras_require=extras_require,
     install_requires=install_requires,

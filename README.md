@@ -20,7 +20,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.0.1"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.1"}
 ```
 
 # Update tapir
@@ -45,7 +45,7 @@ git push
 
 
 ```shell
-NEXT_TAG='v0.0.3'
+NEXT_TAG='v0.26.1'
 
 # pull latest from remote
 git fetch --all --tags --prune

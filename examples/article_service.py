@@ -27,9 +27,9 @@ if __name__ == '__main__':
 
         stub: ArticlePageServiceStub = ArticlePageServiceStub(channel)
 
-        metadata = [('authorization', os.getenv('GRPC_AUTHORIZATION', 'VOID'))]
+        metadata = [('authorization', os.getenv('GRPC_AUTHORIZATION', 'VOID')), ('feature-flag', 'body-split')]
         response: GetArticlePageResponse = stub.GetArticlePage(
-            request=GetArticlePageRequest(id=91251288),
+            request=GetArticlePageRequest(id=91501530),
             metadata=metadata
         )
 

@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pytapir.egg-info/PKG-INFO
+pytapir.egg-info/SOURCES.txt
+pytapir.egg-info/dependency_links.txt
+pytapir.egg-info/requires.txt
+pytapir.egg-info/top_level.txt
+stroeer/__init__.py

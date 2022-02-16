@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from stroeer.page.article.v1 import article_page_pb2 as stroeer_dot_page_dot_article_dot_v1_dot_article__page__pb2
+from stroeer.page.stage.v1 import stage_pb2 as stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2stroeer/page/article/v1/article_page_service.proto\x12\x17stroeer.page.article.v1\x1a*stroeer/page/article/v1/article_page.proto\"#\n\x15GetArticlePageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"T\n\x16GetArticlePageResponse\x12:\n\x0c\x61rticle_page\x18\x01 \x01(\x0b\x32$.stroeer.page.article.v1.ArticlePage2\x89\x01\n\x12\x41rticlePageService\x12s\n\x0eGetArticlePage\x12..stroeer.page.article.v1.GetArticlePageRequest\x1a/.stroeer.page.article.v1.GetArticlePageResponse\"\x00\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3'
+  serialized_pb=b'\n2stroeer/page/article/v1/article_page_service.proto\x12\x17stroeer.page.article.v1\x1a*stroeer/page/article/v1/article_page.proto\x1a!stroeer/page/stage/v1/stage.proto\"#\n\x15GetArticlePageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"T\n\x16GetArticlePageResponse\x12:\n\x0c\x61rticle_page\x18\x01 \x01(\x0b\x32$.stroeer.page.article.v1.ArticlePage\",\n\x1bGetArticleCompanionsRequest\x12\r\n\x05token\x18\x01 \x01(\t\"U\n\x1cGetArticleCompanionsResponse\x12\x35\n\ncompanions\x18\x01 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item2\x91\x02\n\x12\x41rticlePageService\x12s\n\x0eGetArticlePage\x12..stroeer.page.article.v1.GetArticlePageRequest\x1a/.stroeer.page.article.v1.GetArticlePageResponse\"\x00\x12\x85\x01\n\x14GetArticleCompanions\x12\x34.stroeer.page.article.v1.GetArticleCompanionsRequest\x1a\x35.stroeer.page.article.v1.GetArticleCompanionsResponse\"\x00\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3'
   ,
-  dependencies=[stroeer_dot_page_dot_article_dot_v1_dot_article__page__pb2.DESCRIPTOR,])
+  dependencies=[stroeer_dot_page_dot_article_dot_v1_dot_article__page__pb2.DESCRIPTOR,stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2.DESCRIPTOR,])
 
 
 
@@ -54,8 +55,8 @@ _GETARTICLEPAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=123,
-  serialized_end=158,
+  serialized_start=158,
+  serialized_end=193,
 )
 
 
@@ -86,13 +87,80 @@ _GETARTICLEPAGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=160,
-  serialized_end=244,
+  serialized_start=195,
+  serialized_end=279,
+)
+
+
+_GETARTICLECOMPANIONSREQUEST = _descriptor.Descriptor(
+  name='GetArticleCompanionsRequest',
+  full_name='stroeer.page.article.v1.GetArticleCompanionsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='token', full_name='stroeer.page.article.v1.GetArticleCompanionsRequest.token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=281,
+  serialized_end=325,
+)
+
+
+_GETARTICLECOMPANIONSRESPONSE = _descriptor.Descriptor(
+  name='GetArticleCompanionsResponse',
+  full_name='stroeer.page.article.v1.GetArticleCompanionsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='companions', full_name='stroeer.page.article.v1.GetArticleCompanionsResponse.companions', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=327,
+  serialized_end=412,
 )
 
 _GETARTICLEPAGERESPONSE.fields_by_name['article_page'].message_type = stroeer_dot_page_dot_article_dot_v1_dot_article__page__pb2._ARTICLEPAGE
+_GETARTICLECOMPANIONSRESPONSE.fields_by_name['companions'].message_type = stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2._STAGE_ITEM
 DESCRIPTOR.message_types_by_name['GetArticlePageRequest'] = _GETARTICLEPAGEREQUEST
 DESCRIPTOR.message_types_by_name['GetArticlePageResponse'] = _GETARTICLEPAGERESPONSE
+DESCRIPTOR.message_types_by_name['GetArticleCompanionsRequest'] = _GETARTICLECOMPANIONSREQUEST
+DESCRIPTOR.message_types_by_name['GetArticleCompanionsResponse'] = _GETARTICLECOMPANIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetArticlePageRequest = _reflection.GeneratedProtocolMessageType('GetArticlePageRequest', (_message.Message,), {
@@ -109,6 +177,20 @@ GetArticlePageResponse = _reflection.GeneratedProtocolMessageType('GetArticlePag
   })
 _sym_db.RegisterMessage(GetArticlePageResponse)
 
+GetArticleCompanionsRequest = _reflection.GeneratedProtocolMessageType('GetArticleCompanionsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETARTICLECOMPANIONSREQUEST,
+  '__module__' : 'stroeer.page.article.v1.article_page_service_pb2'
+  # @@protoc_insertion_point(class_scope:stroeer.page.article.v1.GetArticleCompanionsRequest)
+  })
+_sym_db.RegisterMessage(GetArticleCompanionsRequest)
+
+GetArticleCompanionsResponse = _reflection.GeneratedProtocolMessageType('GetArticleCompanionsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETARTICLECOMPANIONSRESPONSE,
+  '__module__' : 'stroeer.page.article.v1.article_page_service_pb2'
+  # @@protoc_insertion_point(class_scope:stroeer.page.article.v1.GetArticleCompanionsResponse)
+  })
+_sym_db.RegisterMessage(GetArticleCompanionsResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -119,8 +201,8 @@ _ARTICLEPAGESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=247,
-  serialized_end=384,
+  serialized_start=415,
+  serialized_end=688,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetArticlePage',
@@ -129,6 +211,16 @@ _ARTICLEPAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETARTICLEPAGEREQUEST,
     output_type=_GETARTICLEPAGERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetArticleCompanions',
+    full_name='stroeer.page.article.v1.ArticlePageService.GetArticleCompanions',
+    index=1,
+    containing_service=None,
+    input_type=_GETARTICLECOMPANIONSREQUEST,
+    output_type=_GETARTICLECOMPANIONSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xa9\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\"z\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3'
+  serialized_pb=b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xe0\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\x12\x35\n\ncompanions\x18\x04 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\"z\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3'
   ,
   dependencies=[stroeer_dot_core_dot_v1_dot_article__pb2.DESCRIPTOR,stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _RELATEDARTICLESOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=433,
-  serialized_end=533,
+  serialized_start=488,
+  serialized_end=588,
 )
 _sym_db.RegisterEnumDescriptor(_RELATEDARTICLESOURCE)
 
@@ -86,6 +86,13 @@ _ARTICLEPAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='companions', full_name='stroeer.page.article.v1.ArticlePage.companions', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -99,7 +106,7 @@ _ARTICLEPAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=138,
-  serialized_end=307,
+  serialized_end=362,
 )
 
 
@@ -137,13 +144,14 @@ _RELATEDARTICLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=431,
+  serialized_start=364,
+  serialized_end=486,
 )
 
 _ARTICLEPAGE.fields_by_name['article'].message_type = stroeer_dot_core_dot_v1_dot_article__pb2._ARTICLE
 _ARTICLEPAGE.fields_by_name['related_articles'].message_type = _RELATEDARTICLE
 _ARTICLEPAGE.fields_by_name['stages'].message_type = stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2._STAGE
+_ARTICLEPAGE.fields_by_name['companions'].message_type = stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2._STAGE_ITEM
 _RELATEDARTICLE.fields_by_name['article'].message_type = stroeer_dot_core_dot_v1_dot_article__pb2._ARTICLE
 _RELATEDARTICLE.fields_by_name['source'].enum_type = _RELATEDARTICLESOURCE
 DESCRIPTOR.message_types_by_name['ArticlePage'] = _ARTICLEPAGE

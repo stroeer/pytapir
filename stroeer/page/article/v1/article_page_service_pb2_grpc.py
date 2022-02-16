@@ -9,12 +9,15 @@ class ArticlePageServiceStub(object):
     """*
     ```protobuf
     service ArticlePageService {
+    # turns the requested article with editorial render relevant data for the user and SEO bots.
     rpc GetArticlePage (GetArticlePageRequest) returns (GetArticlePageResponse) {}
+
+    # request data to render Article Companions as individual html for esi integration on ArticlePages
+    rpc GetArticleCompanions (GetArticleCompanionsRequest) returns (GetArticleCompanionsResponse) {}
     }
     ```
     # Description
 
-    turns the requested article with all render relevant data for the user and SEO bots.
 
     """
 
@@ -29,23 +32,38 @@ class ArticlePageServiceStub(object):
                 request_serializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageRequest.SerializeToString,
                 response_deserializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageResponse.FromString,
                 )
+        self.GetArticleCompanions = channel.unary_unary(
+                '/stroeer.page.article.v1.ArticlePageService/GetArticleCompanions',
+                request_serializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsRequest.SerializeToString,
+                response_deserializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsResponse.FromString,
+                )
 
 
 class ArticlePageServiceServicer(object):
     """*
     ```protobuf
     service ArticlePageService {
+    # turns the requested article with editorial render relevant data for the user and SEO bots.
     rpc GetArticlePage (GetArticlePageRequest) returns (GetArticlePageResponse) {}
+
+    # request data to render Article Companions as individual html for esi integration on ArticlePages
+    rpc GetArticleCompanions (GetArticleCompanionsRequest) returns (GetArticleCompanionsResponse) {}
     }
     ```
     # Description
 
-    turns the requested article with all render relevant data for the user and SEO bots.
 
     """
 
     def GetArticlePage(self, request, context):
         """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetArticleCompanions(self, request, context):
+        """request data to render Article Companions as individual html for esi integration on ArticlePages
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -58,6 +76,11 @@ def add_ArticlePageServiceServicer_to_server(servicer, server):
                     request_deserializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageRequest.FromString,
                     response_serializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageResponse.SerializeToString,
             ),
+            'GetArticleCompanions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetArticleCompanions,
+                    request_deserializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsRequest.FromString,
+                    response_serializer=stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'stroeer.page.article.v1.ArticlePageService', rpc_method_handlers)
@@ -69,12 +92,15 @@ class ArticlePageService(object):
     """*
     ```protobuf
     service ArticlePageService {
+    # turns the requested article with editorial render relevant data for the user and SEO bots.
     rpc GetArticlePage (GetArticlePageRequest) returns (GetArticlePageResponse) {}
+
+    # request data to render Article Companions as individual html for esi integration on ArticlePages
+    rpc GetArticleCompanions (GetArticleCompanionsRequest) returns (GetArticleCompanionsResponse) {}
     }
     ```
     # Description
 
-    turns the requested article with all render relevant data for the user and SEO bots.
 
     """
 
@@ -92,5 +118,22 @@ class ArticlePageService(object):
         return grpc.experimental.unary_unary(request, target, '/stroeer.page.article.v1.ArticlePageService/GetArticlePage',
             stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageRequest.SerializeToString,
             stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticlePageResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetArticleCompanions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stroeer.page.article.v1.ArticlePageService/GetArticleCompanions',
+            stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsRequest.SerializeToString,
+            stroeer_dot_page_dot_article_dot_v1_dot_article__page__service__pb2.GetArticleCompanionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

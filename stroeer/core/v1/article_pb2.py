@@ -21,171 +21,61 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\022de.stroeer.core.v1P\001Z(github.com/stroeer/go-tapir/core/v1;core',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dstroeer/core/v1/article.proto\x12\x0fstroeer.core.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cstroeer/core/v1/shared.proto\"\x9b\x06\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.stroeer.core.v1.Article.ContentType\x12\x39\n\x08sub_type\x18\x03 \x01(\x0e\x32\'.stroeer.core.v1.Article.ContentSubType\x12\x30\n\x0csection_tree\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\x12\x34\n\x06\x66ields\x18\x05 \x03(\x0b\x32$.stroeer.core.v1.Article.FieldsEntry\x12#\n\x04\x62ody\x18\x06 \x01(\x0b\x32\x15.stroeer.core.v1.Body\x12+\n\x08metadata\x18\x07 \x01(\x0b\x32\x19.stroeer.core.v1.Metadata\x12*\n\x08\x65lements\x18\x08 \x03(\x0b\x32\x18.stroeer.core.v1.Element\x12*\n\x08keywords\x18\t \x03(\x0b\x32\x18.stroeer.core.v1.Keyword\x12\x0f\n\x07onwards\x18\n \x03(\x03\x12\x14\n\x08\x65ntities\x18\x64 \x03(\tB\x02\x18\x01\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0b\x43ontentType\x12\x1c\n\x18\x43ONTENT_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\t\n\x05IMAGE\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\t\n\x05\x45MBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\n\n\x06\x41GENCY\x10\x07\"\xac\x01\n\x0e\x43ontentSubType\x12 \n\x1c\x43ONTENT_SUB_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04NEWS\x10\x01\x12\n\n\x06\x43OLUMN\x10\x02\x12\x0e\n\nCOMMENTARY\x10\x03\x12\r\n\tINTERVIEW\x10\x04\x12\x0f\n\x0b\x43ONTROVERSY\x10\x05\x12\x10\n\x0cTAGESANBRUCH\x10\x06\x12\r\n\tEVERGREEN\x10\x07\x12\x11\n\rAGENCY_IMPORT\x10\x08\"\x9a\x03\n\x08Metadata\x12.\n\x05state\x18\x01 \x01(\x0e\x32\x1f.stroeer.core.v1.Metadata.State\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublish_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bupdate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13transformation_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15transformation_errors\x18\x07 \x01(\x03\"E\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0b\n\x07\x44\x45LETED\x10\x02\x12\t\n\x05\x44RAFT\x10\x03\"\xc2\x03\n\x07\x45lement\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32$.stroeer.core.v1.Element.ElementType\x12;\n\trelations\x18\x02 \x03(\x0e\x32(.stroeer.core.v1.Element.ElementRelation\x12&\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x16.stroeer.core.v1.Asset\x12*\n\x08\x63hildren\x18\x04 \x03(\x0b\x32\x18.stroeer.core.v1.Element\"\xa4\x01\n\x0b\x45lementType\x12\x1c\n\x18\x45LEMENT_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\t\n\x05IMAGE\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\n\n\x06OEMBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\n\n\x06\x41GENCY\x10\x07\x12\x15\n\x11\x45\x44GE_SIDE_INCLUDE\x10\x08\x12\x0c\n\x08\x43ITATION\x10\t\"K\n\x0f\x45lementRelation\x12 \n\x1c\x45LEMENT_RELATION_UNSPECIFIED\x10\x00\x12\n\n\x06OPENER\x10\x01\x12\n\n\x06TEASER\x10\x02\"\xa8\x02\n\x05\x41sset\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .stroeer.core.v1.Asset.AssetType\x12\x32\n\x06\x66ields\x18\x02 \x03(\x0b\x32\".stroeer.core.v1.Asset.FieldsEntry\x12+\n\x08metadata\x18\x03 \x01(\x0b\x32\x19.stroeer.core.v1.Metadata\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"_\n\tAssetType\x12\x1a\n\x16\x41SSET_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\t\n\x05VIDEO\x10\x02\x12\x12\n\x0e\x45XTERNAL_VIDEO\x10\x03\x12\x0c\n\x08METADATA\x10\x04\"3\n\x04\x42ody\x12+\n\x08\x63hildren\x18\x01 \x03(\x0b\x32\x19.stroeer.core.v1.BodyNode\"\xe5\x01\n\x08\x42odyNode\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x35\n\x06\x66ields\x18\x03 \x03(\x0b\x32%.stroeer.core.v1.BodyNode.FieldsEntry\x12+\n\x08\x63hildren\x18\x04 \x03(\x0b\x32\x19.stroeer.core.v1.BodyNode\x12*\n\x08\x65lements\x18\x05 \x03(\x0b\x32\x18.stroeer.core.v1.Element\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"&\n\x07Keyword\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\tB@\n\x12\x64\x65.stroeer.core.v1P\x01Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3'
+  serialized_pb=b'\n\x1dstroeer/core/v1/article.proto\x12\x0fstroeer.core.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cstroeer/core/v1/shared.proto\"\xfc\x13\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x04type\x18\x02 \x01(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12\x32\n\x08sub_type\x18\x03 \x01(\x0e\x32 .stroeer.core.v1.Article.SubType\x12\x30\n\x0csection_tree\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\x12\x34\n\x06\x66ields\x18\x05 \x03(\x0b\x32$.stroeer.core.v1.Article.FieldsEntry\x12-\n\x06\x62odies\x18\x06 \x03(\x0b\x32\x1d.stroeer.core.v1.Article.Body\x12\x33\n\x08metadata\x18\x07 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x12\x32\n\x08\x65lements\x18\x08 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x12\x32\n\x08keywords\x18\t \x03(\x0b\x32 .stroeer.core.v1.Article.Keyword\x12\x0f\n\x07onwards\x18\n \x03(\x03\x12\x14\n\x08\x65ntities\x18\x64 \x03(\tB\x02\x18\x01\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x81\x06\n\x07\x45lement\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32%.stroeer.core.v1.Article.Element.Type\x12<\n\trelations\x18\x02 \x03(\x0e\x32).stroeer.core.v1.Article.Element.Relation\x12\x36\n\x06\x61ssets\x18\x03 \x03(\x0b\x32&.stroeer.core.v1.Article.Element.Asset\x12\x32\n\x08\x63hildren\x18\x04 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a\xc0\x02\n\x05\x41sset\x12\x39\n\x04type\x18\x01 \x01(\x0e\x32+.stroeer.core.v1.Article.Element.Asset.Type\x12\x42\n\x06\x66ields\x18\x02 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Element.Asset.FieldsEntry\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\t\n\x05VIDEO\x10\x02\x12\x12\n\x0e\x45XTERNAL_VIDEO\x10\x03\x12\x0c\n\x08METADATA\x10\x04\"\x95\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\t\n\x05IMAGE\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\n\n\x06OEMBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\n\n\x06\x41GENCY\x10\x07\x12\x15\n\x11\x45\x44GE_SIDE_INCLUDE\x10\x08\x12\x0c\n\x08\x43ITATION\x10\t\"<\n\x08Relation\x12\x18\n\x14RELATION_UNSPECIFIED\x10\x00\x12\n\n\x06OPENER\x10\x01\x12\n\n\x06TEASER\x10\x02\x1a\xef\x03\n\x04\x42ody\x12\x38\n\x08\x63hildren\x18\x01 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x30\n\x04type\x18\x02 \x01(\x0e\x32\".stroeer.core.v1.Article.Body.Type\x1a\x87\x02\n\x08\x42odyNode\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x42\n\x06\x66ields\x18\x03 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Body.BodyNode.FieldsEntry\x12\x38\n\x08\x63hildren\x18\x04 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x32\n\x08\x65lements\x18\x05 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42ODY\x10\x01\x12\x13\n\x0f\x41RTICLE_SOURCES\x10\x02\x12\x0e\n\nDISCLAIMER\x10\x03\x12\r\n\tTRUST_BOX\x10\x04\x12\x15\n\x11TABLE_OF_CONTENTS\x10\x05\x1a\xa2\x03\n\x08Metadata\x12\x36\n\x05state\x18\x01 \x01(\x0e\x32\'.stroeer.core.v1.Article.Metadata.State\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublish_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bupdate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13transformation_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15transformation_errors\x18\x07 \x01(\x03\"E\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0b\n\x07\x44\x45LETED\x10\x02\x12\t\n\x05\x44RAFT\x10\x03\x1a&\n\x07Keyword\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x85\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\r\n\x05IMAGE\x10\x02\x1a\x02\x08\x01\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\t\n\x05\x45MBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\x0e\n\x06\x41GENCY\x10\x07\x1a\x02\x08\x01\x12\x0c\n\x08\x45XTERNAL\x10\x08\"\xae\x01\n\x07SubType\x12\x18\n\x14SUB_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04NEWS\x10\x01\x12\n\n\x06\x43OLUMN\x10\x02\x12\x0e\n\nCOMMENTARY\x10\x03\x12\r\n\tINTERVIEW\x10\x04\x12\x0f\n\x0b\x43ONTROVERSY\x10\x05\x12\x10\n\x0cTAGESANBRUCH\x10\x06\x12\r\n\tEVERGREEN\x10\x07\x12\x11\n\rAGENCY_IMPORT\x10\x08\x12\x0f\n\x0b\x41\x44VERTORIAL\x10\tB@\n\x12\x64\x65.stroeer.core.v1P\x01Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,stroeer_dot_core_dot_v1_dot_shared__pb2.DESCRIPTOR,])
 
 
 
-_ARTICLE_CONTENTTYPE = _descriptor.EnumDescriptor(
-  name='ContentType',
-  full_name='stroeer.core.v1.Article.ContentType',
+_ARTICLE_ELEMENT_ASSET_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='stroeer.core.v1.Article.Element.Asset.Type',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='CONTENT_TYPE_UNSPECIFIED', index=0, number=0,
+      name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ARTICLE', index=1, number=1,
+      name='IMAGE', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='IMAGE', index=2, number=2,
+      name='VIDEO', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='VIDEO', index=3, number=3,
+      name='EXTERNAL_VIDEO', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='GALLERY', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='EMBED', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='AUTHOR', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='AGENCY', index=7, number=7,
+      name='METADATA', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=608,
-  serialized_end=734,
+  serialized_start=1100,
+  serialized_end=1184,
 )
-_sym_db.RegisterEnumDescriptor(_ARTICLE_CONTENTTYPE)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_ELEMENT_ASSET_TYPE)
 
-_ARTICLE_CONTENTSUBTYPE = _descriptor.EnumDescriptor(
-  name='ContentSubType',
-  full_name='stroeer.core.v1.Article.ContentSubType',
+_ARTICLE_ELEMENT_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='stroeer.core.v1.Article.Element.Type',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='CONTENT_SUB_TYPE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='NEWS', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='COLUMN', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='COMMENTARY', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='INTERVIEW', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='CONTROVERSY', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='TAGESANBRUCH', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='EVERGREEN', index=7, number=7,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='AGENCY_IMPORT', index=8, number=8,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=737,
-  serialized_end=909,
-)
-_sym_db.RegisterEnumDescriptor(_ARTICLE_CONTENTSUBTYPE)
-
-_METADATA_STATE = _descriptor.EnumDescriptor(
-  name='State',
-  full_name='stroeer.core.v1.Metadata.State',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='STATE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='PUBLISHED', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='DELETED', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='DRAFT', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1253,
-  serialized_end=1322,
-)
-_sym_db.RegisterEnumDescriptor(_METADATA_STATE)
-
-_ELEMENT_ELEMENTTYPE = _descriptor.EnumDescriptor(
-  name='ElementType',
-  full_name='stroeer.core.v1.Element.ElementType',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ELEMENT_TYPE_UNSPECIFIED', index=0, number=0,
+      name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -237,20 +127,20 @@ _ELEMENT_ELEMENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1534,
-  serialized_end=1698,
+  serialized_start=1187,
+  serialized_end=1336,
 )
-_sym_db.RegisterEnumDescriptor(_ELEMENT_ELEMENTTYPE)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_ELEMENT_TYPE)
 
-_ELEMENT_ELEMENTRELATION = _descriptor.EnumDescriptor(
-  name='ElementRelation',
-  full_name='stroeer.core.v1.Element.ElementRelation',
+_ARTICLE_ELEMENT_RELATION = _descriptor.EnumDescriptor(
+  name='Relation',
+  full_name='stroeer.core.v1.Article.Element.Relation',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ELEMENT_RELATION_UNSPECIFIED', index=0, number=0,
+      name='RELATION_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -267,50 +157,215 @@ _ELEMENT_ELEMENTRELATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1700,
-  serialized_end=1775,
+  serialized_start=1338,
+  serialized_end=1398,
 )
-_sym_db.RegisterEnumDescriptor(_ELEMENT_ELEMENTRELATION)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_ELEMENT_RELATION)
 
-_ASSET_ASSETTYPE = _descriptor.EnumDescriptor(
-  name='AssetType',
-  full_name='stroeer.core.v1.Asset.AssetType',
+_ARTICLE_BODY_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='stroeer.core.v1.Article.Body.Type',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ASSET_TYPE_UNSPECIFIED', index=0, number=0,
+      name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='IMAGE', index=1, number=1,
+      name='BODY', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='VIDEO', index=2, number=2,
+      name='ARTICLE_SOURCES', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='EXTERNAL_VIDEO', index=3, number=3,
+      name='DISCLAIMER', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='METADATA', index=4, number=4,
+      name='TRUST_BOX', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TABLE_OF_CONTENTS', index=5, number=5,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1979,
-  serialized_end=2074,
+  serialized_start=1783,
+  serialized_end=1896,
 )
-_sym_db.RegisterEnumDescriptor(_ASSET_ASSETTYPE)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_BODY_TYPE)
+
+_ARTICLE_METADATA_STATE = _descriptor.EnumDescriptor(
+  name='State',
+  full_name='stroeer.core.v1.Article.Metadata.State',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='STATE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PUBLISHED', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DELETED', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DRAFT', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2248,
+  serialized_end=2317,
+)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_METADATA_STATE)
+
+_ARTICLE_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='stroeer.core.v1.Article.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ARTICLE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='IMAGE', index=2, number=2,
+      serialized_options=b'\010\001',
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VIDEO', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GALLERY', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='EMBED', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='AUTHOR', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='AGENCY', index=7, number=7,
+      serialized_options=b'\010\001',
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='EXTERNAL', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2360,
+  serialized_end=2493,
+)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_TYPE)
+
+_ARTICLE_SUBTYPE = _descriptor.EnumDescriptor(
+  name='SubType',
+  full_name='stroeer.core.v1.Article.SubType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SUB_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NEWS', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='COLUMN', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='COMMENTARY', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERVIEW', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CONTROVERSY', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TAGESANBRUCH', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='EVERGREEN', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='AGENCY_IMPORT', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ADVERTORIAL', index=9, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2496,
+  serialized_end=2670,
+)
+_sym_db.RegisterEnumDescriptor(_ARTICLE_SUBTYPE)
 
 
 _ARTICLE_FIELDSENTRY = _descriptor.Descriptor(
@@ -347,8 +402,394 @@ _ARTICLE_FIELDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=606,
+  serialized_start=581,
+  serialized_end=626,
+)
+
+_ARTICLE_ELEMENT_ASSET_FIELDSENTRY = _descriptor.Descriptor(
+  name='FieldsEntry',
+  full_name='stroeer.core.v1.Article.Element.Asset.FieldsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stroeer.core.v1.Article.Element.Asset.FieldsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stroeer.core.v1.Article.Element.Asset.FieldsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=581,
+  serialized_end=626,
+)
+
+_ARTICLE_ELEMENT_ASSET = _descriptor.Descriptor(
+  name='Asset',
+  full_name='stroeer.core.v1.Article.Element.Asset',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='stroeer.core.v1.Article.Element.Asset.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fields', full_name='stroeer.core.v1.Article.Element.Asset.fields', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='stroeer.core.v1.Article.Element.Asset.metadata', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ARTICLE_ELEMENT_ASSET_FIELDSENTRY, ],
+  enum_types=[
+    _ARTICLE_ELEMENT_ASSET_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=864,
+  serialized_end=1184,
+)
+
+_ARTICLE_ELEMENT = _descriptor.Descriptor(
+  name='Element',
+  full_name='stroeer.core.v1.Article.Element',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='stroeer.core.v1.Article.Element.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='relations', full_name='stroeer.core.v1.Article.Element.relations', index=1,
+      number=2, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='assets', full_name='stroeer.core.v1.Article.Element.assets', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='children', full_name='stroeer.core.v1.Article.Element.children', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ARTICLE_ELEMENT_ASSET, ],
+  enum_types=[
+    _ARTICLE_ELEMENT_TYPE,
+    _ARTICLE_ELEMENT_RELATION,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=629,
+  serialized_end=1398,
+)
+
+_ARTICLE_BODY_BODYNODE_FIELDSENTRY = _descriptor.Descriptor(
+  name='FieldsEntry',
+  full_name='stroeer.core.v1.Article.Body.BodyNode.FieldsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stroeer.core.v1.Article.Body.BodyNode.FieldsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stroeer.core.v1.Article.Body.BodyNode.FieldsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=581,
+  serialized_end=626,
+)
+
+_ARTICLE_BODY_BODYNODE = _descriptor.Descriptor(
+  name='BodyNode',
+  full_name='stroeer.core.v1.Article.Body.BodyNode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='stroeer.core.v1.Article.Body.BodyNode.type', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='stroeer.core.v1.Article.Body.BodyNode.text', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fields', full_name='stroeer.core.v1.Article.Body.BodyNode.fields', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='children', full_name='stroeer.core.v1.Article.Body.BodyNode.children', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='stroeer.core.v1.Article.Body.BodyNode.elements', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ARTICLE_BODY_BODYNODE_FIELDSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1518,
+  serialized_end=1781,
+)
+
+_ARTICLE_BODY = _descriptor.Descriptor(
+  name='Body',
+  full_name='stroeer.core.v1.Article.Body',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='children', full_name='stroeer.core.v1.Article.Body.children', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='stroeer.core.v1.Article.Body.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ARTICLE_BODY_BODYNODE, ],
+  enum_types=[
+    _ARTICLE_BODY_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1401,
+  serialized_end=1896,
+)
+
+_ARTICLE_METADATA = _descriptor.Descriptor(
+  name='Metadata',
+  full_name='stroeer.core.v1.Article.Metadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='state', full_name='stroeer.core.v1.Article.Metadata.state', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_time', full_name='stroeer.core.v1.Article.Metadata.start_time', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_time', full_name='stroeer.core.v1.Article.Metadata.end_time', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='publish_time', full_name='stroeer.core.v1.Article.Metadata.publish_time', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update_time', full_name='stroeer.core.v1.Article.Metadata.update_time', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='transformation_time', full_name='stroeer.core.v1.Article.Metadata.transformation_time', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='transformation_errors', full_name='stroeer.core.v1.Article.Metadata.transformation_errors', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ARTICLE_METADATA_STATE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1899,
+  serialized_end=2317,
+)
+
+_ARTICLE_KEYWORD = _descriptor.Descriptor(
+  name='Keyword',
+  full_name='stroeer.core.v1.Article.Keyword',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stroeer.core.v1.Article.Keyword.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='stroeer.core.v1.Article.Keyword.type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2319,
+  serialized_end=2357,
 )
 
 _ARTICLE = _descriptor.Descriptor(
@@ -395,9 +836,9 @@ _ARTICLE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='body', full_name='stroeer.core.v1.Article.body', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='bodies', full_name='stroeer.core.v1.Article.bodies', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -439,10 +880,10 @@ _ARTICLE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_ARTICLE_FIELDSENTRY, ],
+  nested_types=[_ARTICLE_FIELDSENTRY, _ARTICLE_ELEMENT, _ARTICLE_BODY, _ARTICLE_METADATA, _ARTICLE_KEYWORD, ],
   enum_types=[
-    _ARTICLE_CONTENTTYPE,
-    _ARTICLE_CONTENTSUBTYPE,
+    _ARTICLE_TYPE,
+    _ARTICLE_SUBTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -451,434 +892,52 @@ _ARTICLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=114,
-  serialized_end=909,
-)
-
-
-_METADATA = _descriptor.Descriptor(
-  name='Metadata',
-  full_name='stroeer.core.v1.Metadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='state', full_name='stroeer.core.v1.Metadata.state', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='start_time', full_name='stroeer.core.v1.Metadata.start_time', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='end_time', full_name='stroeer.core.v1.Metadata.end_time', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='publish_time', full_name='stroeer.core.v1.Metadata.publish_time', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_time', full_name='stroeer.core.v1.Metadata.update_time', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='transformation_time', full_name='stroeer.core.v1.Metadata.transformation_time', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='transformation_errors', full_name='stroeer.core.v1.Metadata.transformation_errors', index=6,
-      number=7, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _METADATA_STATE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=912,
-  serialized_end=1322,
-)
-
-
-_ELEMENT = _descriptor.Descriptor(
-  name='Element',
-  full_name='stroeer.core.v1.Element',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='stroeer.core.v1.Element.type', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='relations', full_name='stroeer.core.v1.Element.relations', index=1,
-      number=2, type=14, cpp_type=8, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='assets', full_name='stroeer.core.v1.Element.assets', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='children', full_name='stroeer.core.v1.Element.children', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _ELEMENT_ELEMENTTYPE,
-    _ELEMENT_ELEMENTRELATION,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1325,
-  serialized_end=1775,
-)
-
-
-_ASSET_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.core.v1.Asset.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.core.v1.Asset.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.core.v1.Asset.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=561,
-  serialized_end=606,
-)
-
-_ASSET = _descriptor.Descriptor(
-  name='Asset',
-  full_name='stroeer.core.v1.Asset',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='stroeer.core.v1.Asset.type', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.core.v1.Asset.fields', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='stroeer.core.v1.Asset.metadata', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_ASSET_FIELDSENTRY, ],
-  enum_types=[
-    _ASSET_ASSETTYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1778,
-  serialized_end=2074,
-)
-
-
-_BODY = _descriptor.Descriptor(
-  name='Body',
-  full_name='stroeer.core.v1.Body',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='children', full_name='stroeer.core.v1.Body.children', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2076,
-  serialized_end=2127,
-)
-
-
-_BODYNODE_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.core.v1.BodyNode.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.core.v1.BodyNode.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.core.v1.BodyNode.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=561,
-  serialized_end=606,
-)
-
-_BODYNODE = _descriptor.Descriptor(
-  name='BodyNode',
-  full_name='stroeer.core.v1.BodyNode',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='stroeer.core.v1.BodyNode.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='text', full_name='stroeer.core.v1.BodyNode.text', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.core.v1.BodyNode.fields', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='children', full_name='stroeer.core.v1.BodyNode.children', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='elements', full_name='stroeer.core.v1.BodyNode.elements', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_BODYNODE_FIELDSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2130,
-  serialized_end=2359,
-)
-
-
-_KEYWORD = _descriptor.Descriptor(
-  name='Keyword',
-  full_name='stroeer.core.v1.Keyword',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.core.v1.Keyword.value', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='stroeer.core.v1.Keyword.type', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2361,
-  serialized_end=2399,
+  serialized_end=2670,
 )
 
 _ARTICLE_FIELDSENTRY.containing_type = _ARTICLE
-_ARTICLE.fields_by_name['type'].enum_type = _ARTICLE_CONTENTTYPE
-_ARTICLE.fields_by_name['sub_type'].enum_type = _ARTICLE_CONTENTSUBTYPE
+_ARTICLE_ELEMENT_ASSET_FIELDSENTRY.containing_type = _ARTICLE_ELEMENT_ASSET
+_ARTICLE_ELEMENT_ASSET.fields_by_name['type'].enum_type = _ARTICLE_ELEMENT_ASSET_TYPE
+_ARTICLE_ELEMENT_ASSET.fields_by_name['fields'].message_type = _ARTICLE_ELEMENT_ASSET_FIELDSENTRY
+_ARTICLE_ELEMENT_ASSET.fields_by_name['metadata'].message_type = _ARTICLE_METADATA
+_ARTICLE_ELEMENT_ASSET.containing_type = _ARTICLE_ELEMENT
+_ARTICLE_ELEMENT_ASSET_TYPE.containing_type = _ARTICLE_ELEMENT_ASSET
+_ARTICLE_ELEMENT.fields_by_name['type'].enum_type = _ARTICLE_ELEMENT_TYPE
+_ARTICLE_ELEMENT.fields_by_name['relations'].enum_type = _ARTICLE_ELEMENT_RELATION
+_ARTICLE_ELEMENT.fields_by_name['assets'].message_type = _ARTICLE_ELEMENT_ASSET
+_ARTICLE_ELEMENT.fields_by_name['children'].message_type = _ARTICLE_ELEMENT
+_ARTICLE_ELEMENT.containing_type = _ARTICLE
+_ARTICLE_ELEMENT_TYPE.containing_type = _ARTICLE_ELEMENT
+_ARTICLE_ELEMENT_RELATION.containing_type = _ARTICLE_ELEMENT
+_ARTICLE_BODY_BODYNODE_FIELDSENTRY.containing_type = _ARTICLE_BODY_BODYNODE
+_ARTICLE_BODY_BODYNODE.fields_by_name['fields'].message_type = _ARTICLE_BODY_BODYNODE_FIELDSENTRY
+_ARTICLE_BODY_BODYNODE.fields_by_name['children'].message_type = _ARTICLE_BODY_BODYNODE
+_ARTICLE_BODY_BODYNODE.fields_by_name['elements'].message_type = _ARTICLE_ELEMENT
+_ARTICLE_BODY_BODYNODE.containing_type = _ARTICLE_BODY
+_ARTICLE_BODY.fields_by_name['children'].message_type = _ARTICLE_BODY_BODYNODE
+_ARTICLE_BODY.fields_by_name['type'].enum_type = _ARTICLE_BODY_TYPE
+_ARTICLE_BODY.containing_type = _ARTICLE
+_ARTICLE_BODY_TYPE.containing_type = _ARTICLE_BODY
+_ARTICLE_METADATA.fields_by_name['state'].enum_type = _ARTICLE_METADATA_STATE
+_ARTICLE_METADATA.fields_by_name['start_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ARTICLE_METADATA.fields_by_name['end_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ARTICLE_METADATA.fields_by_name['publish_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ARTICLE_METADATA.fields_by_name['update_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ARTICLE_METADATA.fields_by_name['transformation_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ARTICLE_METADATA.containing_type = _ARTICLE
+_ARTICLE_METADATA_STATE.containing_type = _ARTICLE_METADATA
+_ARTICLE_KEYWORD.containing_type = _ARTICLE
+_ARTICLE.fields_by_name['type'].enum_type = _ARTICLE_TYPE
+_ARTICLE.fields_by_name['sub_type'].enum_type = _ARTICLE_SUBTYPE
 _ARTICLE.fields_by_name['section_tree'].message_type = stroeer_dot_core_dot_v1_dot_shared__pb2._REFERENCE
 _ARTICLE.fields_by_name['fields'].message_type = _ARTICLE_FIELDSENTRY
-_ARTICLE.fields_by_name['body'].message_type = _BODY
-_ARTICLE.fields_by_name['metadata'].message_type = _METADATA
-_ARTICLE.fields_by_name['elements'].message_type = _ELEMENT
-_ARTICLE.fields_by_name['keywords'].message_type = _KEYWORD
-_ARTICLE_CONTENTTYPE.containing_type = _ARTICLE
-_ARTICLE_CONTENTSUBTYPE.containing_type = _ARTICLE
-_METADATA.fields_by_name['state'].enum_type = _METADATA_STATE
-_METADATA.fields_by_name['start_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_METADATA.fields_by_name['end_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_METADATA.fields_by_name['publish_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_METADATA.fields_by_name['update_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_METADATA.fields_by_name['transformation_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_METADATA_STATE.containing_type = _METADATA
-_ELEMENT.fields_by_name['type'].enum_type = _ELEMENT_ELEMENTTYPE
-_ELEMENT.fields_by_name['relations'].enum_type = _ELEMENT_ELEMENTRELATION
-_ELEMENT.fields_by_name['assets'].message_type = _ASSET
-_ELEMENT.fields_by_name['children'].message_type = _ELEMENT
-_ELEMENT_ELEMENTTYPE.containing_type = _ELEMENT
-_ELEMENT_ELEMENTRELATION.containing_type = _ELEMENT
-_ASSET_FIELDSENTRY.containing_type = _ASSET
-_ASSET.fields_by_name['type'].enum_type = _ASSET_ASSETTYPE
-_ASSET.fields_by_name['fields'].message_type = _ASSET_FIELDSENTRY
-_ASSET.fields_by_name['metadata'].message_type = _METADATA
-_ASSET_ASSETTYPE.containing_type = _ASSET
-_BODY.fields_by_name['children'].message_type = _BODYNODE
-_BODYNODE_FIELDSENTRY.containing_type = _BODYNODE
-_BODYNODE.fields_by_name['fields'].message_type = _BODYNODE_FIELDSENTRY
-_BODYNODE.fields_by_name['children'].message_type = _BODYNODE
-_BODYNODE.fields_by_name['elements'].message_type = _ELEMENT
+_ARTICLE.fields_by_name['bodies'].message_type = _ARTICLE_BODY
+_ARTICLE.fields_by_name['metadata'].message_type = _ARTICLE_METADATA
+_ARTICLE.fields_by_name['elements'].message_type = _ARTICLE_ELEMENT
+_ARTICLE.fields_by_name['keywords'].message_type = _ARTICLE_KEYWORD
+_ARTICLE_TYPE.containing_type = _ARTICLE
+_ARTICLE_SUBTYPE.containing_type = _ARTICLE
 DESCRIPTOR.message_types_by_name['Article'] = _ARTICLE
-DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
-DESCRIPTOR.message_types_by_name['Element'] = _ELEMENT
-DESCRIPTOR.message_types_by_name['Asset'] = _ASSET
-DESCRIPTOR.message_types_by_name['Body'] = _BODY
-DESCRIPTOR.message_types_by_name['BodyNode'] = _BODYNODE
-DESCRIPTOR.message_types_by_name['Keyword'] = _KEYWORD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Article = _reflection.GeneratedProtocolMessageType('Article', (_message.Message,), {
@@ -889,75 +948,83 @@ Article = _reflection.GeneratedProtocolMessageType('Article', (_message.Message,
     # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.FieldsEntry)
     })
   ,
+
+  'Element' : _reflection.GeneratedProtocolMessageType('Element', (_message.Message,), {
+
+    'Asset' : _reflection.GeneratedProtocolMessageType('Asset', (_message.Message,), {
+
+      'FieldsEntry' : _reflection.GeneratedProtocolMessageType('FieldsEntry', (_message.Message,), {
+        'DESCRIPTOR' : _ARTICLE_ELEMENT_ASSET_FIELDSENTRY,
+        '__module__' : 'stroeer.core.v1.article_pb2'
+        # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Element.Asset.FieldsEntry)
+        })
+      ,
+      'DESCRIPTOR' : _ARTICLE_ELEMENT_ASSET,
+      '__module__' : 'stroeer.core.v1.article_pb2'
+      # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Element.Asset)
+      })
+    ,
+    'DESCRIPTOR' : _ARTICLE_ELEMENT,
+    '__module__' : 'stroeer.core.v1.article_pb2'
+    # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Element)
+    })
+  ,
+
+  'Body' : _reflection.GeneratedProtocolMessageType('Body', (_message.Message,), {
+
+    'BodyNode' : _reflection.GeneratedProtocolMessageType('BodyNode', (_message.Message,), {
+
+      'FieldsEntry' : _reflection.GeneratedProtocolMessageType('FieldsEntry', (_message.Message,), {
+        'DESCRIPTOR' : _ARTICLE_BODY_BODYNODE_FIELDSENTRY,
+        '__module__' : 'stroeer.core.v1.article_pb2'
+        # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Body.BodyNode.FieldsEntry)
+        })
+      ,
+      'DESCRIPTOR' : _ARTICLE_BODY_BODYNODE,
+      '__module__' : 'stroeer.core.v1.article_pb2'
+      # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Body.BodyNode)
+      })
+    ,
+    'DESCRIPTOR' : _ARTICLE_BODY,
+    '__module__' : 'stroeer.core.v1.article_pb2'
+    # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Body)
+    })
+  ,
+
+  'Metadata' : _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), {
+    'DESCRIPTOR' : _ARTICLE_METADATA,
+    '__module__' : 'stroeer.core.v1.article_pb2'
+    # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Metadata)
+    })
+  ,
+
+  'Keyword' : _reflection.GeneratedProtocolMessageType('Keyword', (_message.Message,), {
+    'DESCRIPTOR' : _ARTICLE_KEYWORD,
+    '__module__' : 'stroeer.core.v1.article_pb2'
+    # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article.Keyword)
+    })
+  ,
   'DESCRIPTOR' : _ARTICLE,
   '__module__' : 'stroeer.core.v1.article_pb2'
   # @@protoc_insertion_point(class_scope:stroeer.core.v1.Article)
   })
 _sym_db.RegisterMessage(Article)
 _sym_db.RegisterMessage(Article.FieldsEntry)
-
-Metadata = _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), {
-  'DESCRIPTOR' : _METADATA,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.Metadata)
-  })
-_sym_db.RegisterMessage(Metadata)
-
-Element = _reflection.GeneratedProtocolMessageType('Element', (_message.Message,), {
-  'DESCRIPTOR' : _ELEMENT,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.Element)
-  })
-_sym_db.RegisterMessage(Element)
-
-Asset = _reflection.GeneratedProtocolMessageType('Asset', (_message.Message,), {
-
-  'FieldsEntry' : _reflection.GeneratedProtocolMessageType('FieldsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _ASSET_FIELDSENTRY,
-    '__module__' : 'stroeer.core.v1.article_pb2'
-    # @@protoc_insertion_point(class_scope:stroeer.core.v1.Asset.FieldsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _ASSET,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.Asset)
-  })
-_sym_db.RegisterMessage(Asset)
-_sym_db.RegisterMessage(Asset.FieldsEntry)
-
-Body = _reflection.GeneratedProtocolMessageType('Body', (_message.Message,), {
-  'DESCRIPTOR' : _BODY,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.Body)
-  })
-_sym_db.RegisterMessage(Body)
-
-BodyNode = _reflection.GeneratedProtocolMessageType('BodyNode', (_message.Message,), {
-
-  'FieldsEntry' : _reflection.GeneratedProtocolMessageType('FieldsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _BODYNODE_FIELDSENTRY,
-    '__module__' : 'stroeer.core.v1.article_pb2'
-    # @@protoc_insertion_point(class_scope:stroeer.core.v1.BodyNode.FieldsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _BODYNODE,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.BodyNode)
-  })
-_sym_db.RegisterMessage(BodyNode)
-_sym_db.RegisterMessage(BodyNode.FieldsEntry)
-
-Keyword = _reflection.GeneratedProtocolMessageType('Keyword', (_message.Message,), {
-  'DESCRIPTOR' : _KEYWORD,
-  '__module__' : 'stroeer.core.v1.article_pb2'
-  # @@protoc_insertion_point(class_scope:stroeer.core.v1.Keyword)
-  })
-_sym_db.RegisterMessage(Keyword)
+_sym_db.RegisterMessage(Article.Element)
+_sym_db.RegisterMessage(Article.Element.Asset)
+_sym_db.RegisterMessage(Article.Element.Asset.FieldsEntry)
+_sym_db.RegisterMessage(Article.Body)
+_sym_db.RegisterMessage(Article.Body.BodyNode)
+_sym_db.RegisterMessage(Article.Body.BodyNode.FieldsEntry)
+_sym_db.RegisterMessage(Article.Metadata)
+_sym_db.RegisterMessage(Article.Keyword)
 
 
 DESCRIPTOR._options = None
 _ARTICLE_FIELDSENTRY._options = None
+_ARTICLE_ELEMENT_ASSET_FIELDSENTRY._options = None
+_ARTICLE_BODY_BODYNODE_FIELDSENTRY._options = None
+_ARTICLE_TYPE.values_by_name["IMAGE"]._options = None
+_ARTICLE_TYPE.values_by_name["AGENCY"]._options = None
 _ARTICLE.fields_by_name['entities']._options = None
-_ASSET_FIELDSENTRY._options = None
-_BODYNODE_FIELDSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

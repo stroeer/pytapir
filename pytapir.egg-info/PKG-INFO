@@ -56,6 +56,9 @@ tapir is mounted as a git submodule
 
 # bump tapir to latest
 git submodule update --init --recursive
+cd tapir
+git pull
+cd ..
 
 # commit changes
 git add tapir

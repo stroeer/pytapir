@@ -19,6 +19,11 @@ class StageServiceStub(object):
                 request_serializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesRequest.SerializeToString,
                 response_deserializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesResponse.FromString,
                 )
+        self.GetArticleCompanions = channel.unary_unary(
+                '/stroeer.fragment.v1.StageService/GetArticleCompanions',
+                request_serializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsRequest.SerializeToString,
+                response_deserializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsResponse.FromString,
+                )
 
 
 class StageServiceServicer(object):
@@ -60,6 +65,13 @@ class StageServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetArticleCompanions(self, request, context):
+        """request data to render Article Companions as individual html for esi integration on ArticlePages
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StageServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -67,6 +79,11 @@ def add_StageServiceServicer_to_server(servicer, server):
                     servicer.GetStages,
                     request_deserializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesRequest.FromString,
                     response_serializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesResponse.SerializeToString,
+            ),
+            'GetArticleCompanions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetArticleCompanions,
+                    request_deserializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsRequest.FromString,
+                    response_serializer=stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -92,5 +109,22 @@ class StageService(object):
         return grpc.experimental.unary_unary(request, target, '/stroeer.fragment.v1.StageService/GetStages',
             stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesRequest.SerializeToString,
             stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetStagesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetArticleCompanions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stroeer.fragment.v1.StageService/GetArticleCompanions',
+            stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsRequest.SerializeToString,
+            stroeer_dot_fragment_dot_v1_dot_stage__service__pb2.GetArticleCompanionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

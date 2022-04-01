@@ -20,7 +20,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.1"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.3"}
 ```
 
 # Update tapir

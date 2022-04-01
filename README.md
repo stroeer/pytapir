@@ -12,7 +12,7 @@ A general [API documentation can be found here](https://stroeer.github.io/tapir/
 
 [untested]
 
-`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.0.1#egg=requests`
+`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.26.3#egg=requests`
 
 ## `pipenv`
 
@@ -31,21 +31,23 @@ tapir is mounted as a git submodule
 
 # bump tapir to latest
 git submodule update --init --recursive
+git submodule foreach git pull origin master
 
 # commit changes
 git add tapir
 
 # if there are changes, commit and push them:
-git commit -m "bumped tapir to latest"
+git commit -m "bumped tapir to latest (origin/master)"
 git push
 
 ```
 
 # Release
 
+bump version in [__init__.py](./stroeer/__init__.py)
 
 ```shell
-NEXT_TAG='v0.26.1'
+NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
 
 # pull latest from remote
 git fetch --all --tags --prune

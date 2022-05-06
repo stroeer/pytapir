@@ -10,9 +10,7 @@ A general [API documentation can be found here](https://stroeer.github.io/tapir/
 
 ## `pipenv`
 
-[untested]
-
-`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.26.3#egg=requests`
+`pipenv install -e git+https://github.com/stroeer/pytapir.git@v0.26.3#egg=pytapir`
 
 ## `pipenv`
 
@@ -20,7 +18,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.3"}
+pytapir = {editable = true, ref = "v0.26.3", git = "https://github.com/stroeer/pytapir.git"}
 ```
 
 # Update tapir

@@ -12,7 +12,7 @@ from stroeer.page.article.v1.article_page_service_pb2 import \
 from stroeer.page.article.v1.article_page_service_pb2_grpc import \
     ArticlePageServiceStub
 
-if __name__ == '__main__':
+def handler():
     ssl = grpc.ssl_channel_credentials()
 
     if not os.getenv('GRPC_ENDPOINT'):
@@ -49,3 +49,10 @@ related articles
 ================
 {pprint.pformat(related_articles)}
     """)
+
+
+def lambda_handler(event, context):
+    handler()
+
+if __name__ == '__main__':
+    handler()

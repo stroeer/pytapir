@@ -6,7 +6,8 @@ from stroeer.page.section.v1 import section_page_service_pb2 as stroeer_dot_page
 
 
 class SectionPageServiceStub(object):
-    """Service to fetch all data needed to render a section page, like the homepage or "/politik/"
+    """*
+    Service to fetch all data needed to render a section page, like the homepage or "/politik/"
     """
 
     def __init__(self, channel):
@@ -23,64 +24,12 @@ class SectionPageServiceStub(object):
 
 
 class SectionPageServiceServicer(object):
-    """Service to fetch all data needed to render a section page, like the homepage or "/politik/"
+    """*
+    Service to fetch all data needed to render a section page, like the homepage or "/politik/"
     """
 
     def GetSectionPage(self, request, context):
-        """*
-        ############################################################################
-        # Description
-        ############################################################################
-        Get section data for a given section path
-
-        ############################################################################
-        # Status/Error scenario's
-        ############################################################################
-
-        scenario: found
-        description: all data for the section page was found
-        gRPC status: OK
-        gRPC error payload: none
-        HTTP status: OK
-        cacheable: yes
-
-        scenario: section path is empty
-        description: client did not provide a section path
-        gRPC status: INVALID_ARGUMENT
-        gRPC error payload: google.rpc.BadRequest
-        HTTP status: 400
-        cacheable: yes
-
-        scenario: section path is invalid
-        description: client provided an invalid section path
-        gRPC status: INVALID_ARGUMENT
-        gRPC error payload: google.rpc.BadRequest
-        HTTP status: 400
-        cacheable: yes
-
-        scenario: section path is unknown
-        description: client provided an unknown section path
-        gRPC status: NOT_FOUND
-        gRPC error payload: none
-        HTTP status: 404
-        cacheable: yes
-
-        scenario: internal
-        description: internal error while loading section data
-        gRPC status: INTERNAL
-        gRPC error payload: none
-        HTTP status: 500
-        cacheable: no
-
-        scenario: timeout
-        description: timeout while loading section data
-        gRPC status: DEADLINE_EXCEEDED
-        gRPC error payload: none
-        HTTP status: 504
-        cacheable: no
-
-        Scenarios about incomplete section data needs to be defined
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -101,7 +50,8 @@ def add_SectionPageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SectionPageService(object):
-    """Service to fetch all data needed to render a section page, like the homepage or "/politik/"
+    """*
+    Service to fetch all data needed to render a section page, like the homepage or "/politik/"
     """
 
     @staticmethod

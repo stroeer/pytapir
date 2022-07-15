@@ -13,6 +13,8 @@ class ArticleServiceStub(object):
     service ArticleService {
     // get a single article by its `article_id`
     rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
+    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
+    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
     // query multiple articles at once
     rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
     // list the available root sections
@@ -40,6 +42,11 @@ class ArticleServiceStub(object):
                 request_serializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.GetArticleRequest.SerializeToString,
                 response_deserializer=stroeer_dot_core_dot_v1_dot_article__pb2.Article.FromString,
                 )
+        self.BatchGetArticles = channel.unary_unary(
+                '/stroeer.core.v1.ArticleService/BatchGetArticles',
+                request_serializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesRequest.SerializeToString,
+                response_deserializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesResponse.FromString,
+                )
         self.ListArticles = channel.unary_unary(
                 '/stroeer.core.v1.ArticleService/ListArticles',
                 request_serializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.ListArticlesRequest.SerializeToString,
@@ -58,6 +65,8 @@ class ArticleServiceServicer(object):
     service ArticleService {
     // get a single article by its `article_id`
     rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
+    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
+    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
     // query multiple articles at once
     rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
     // list the available root sections
@@ -75,6 +84,12 @@ class ArticleServiceServicer(object):
     """
 
     def GetArticle(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetArticles(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -102,6 +117,11 @@ def add_ArticleServiceServicer_to_server(servicer, server):
                     request_deserializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.GetArticleRequest.FromString,
                     response_serializer=stroeer_dot_core_dot_v1_dot_article__pb2.Article.SerializeToString,
             ),
+            'BatchGetArticles': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGetArticles,
+                    request_deserializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesRequest.FromString,
+                    response_serializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesResponse.SerializeToString,
+            ),
             'ListArticles': grpc.unary_unary_rpc_method_handler(
                     servicer.ListArticles,
                     request_deserializer=stroeer_dot_core_dot_v1_dot_core__article__service__pb2.ListArticlesRequest.FromString,
@@ -125,6 +145,8 @@ class ArticleService(object):
     service ArticleService {
     // get a single article by its `article_id`
     rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
+    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
+    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
     // query multiple articles at once
     rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
     // list the available root sections
@@ -155,6 +177,23 @@ class ArticleService(object):
         return grpc.experimental.unary_unary(request, target, '/stroeer.core.v1.ArticleService/GetArticle',
             stroeer_dot_core_dot_v1_dot_core__article__service__pb2.GetArticleRequest.SerializeToString,
             stroeer_dot_core_dot_v1_dot_article__pb2.Article.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchGetArticles(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/stroeer.core.v1.ArticleService/BatchGetArticles',
+            stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesRequest.SerializeToString,
+            stroeer_dot_core_dot_v1_dot_core__article__service__pb2.BatchGetArticlesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

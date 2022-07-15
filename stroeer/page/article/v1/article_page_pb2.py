@@ -4,6 +4,7 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,149 +17,16 @@ from stroeer.core.v1 import article_pb2 as stroeer_dot_core_dot_v1_dot_article__
 from stroeer.page.stage.v1 import stage_pb2 as stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='stroeer/page/article/v1/article_page.proto',
-  package='stroeer.page.article.v1',
-  syntax='proto3',
-  serialized_options=b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xe0\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\x12\x35\n\ncompanions\x18\x04 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\"z\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3'
-  ,
-  dependencies=[stroeer_dot_core_dot_v1_dot_article__pb2.DESCRIPTOR,stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xe0\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\x12\x35\n\ncompanions\x18\x04 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\"z\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3')
 
-_RELATEDARTICLESOURCE = _descriptor.EnumDescriptor(
-  name='RelatedArticleSource',
-  full_name='stroeer.page.article.v1.RelatedArticleSource',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='RELATED_ARTICLE_SOURCE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='RELATED_ARTICLE_SOURCE_EDITORIAL', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=488,
-  serialized_end=588,
-)
-_sym_db.RegisterEnumDescriptor(_RELATEDARTICLESOURCE)
-
+_RELATEDARTICLESOURCE = DESCRIPTOR.enum_types_by_name['RelatedArticleSource']
 RelatedArticleSource = enum_type_wrapper.EnumTypeWrapper(_RELATEDARTICLESOURCE)
 RELATED_ARTICLE_SOURCE_UNSPECIFIED = 0
 RELATED_ARTICLE_SOURCE_EDITORIAL = 1
 
 
-
-_ARTICLEPAGE = _descriptor.Descriptor(
-  name='ArticlePage',
-  full_name='stroeer.page.article.v1.ArticlePage',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='article', full_name='stroeer.page.article.v1.ArticlePage.article', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='related_articles', full_name='stroeer.page.article.v1.ArticlePage.related_articles', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stages', full_name='stroeer.page.article.v1.ArticlePage.stages', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='companions', full_name='stroeer.page.article.v1.ArticlePage.companions', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=138,
-  serialized_end=362,
-)
-
-
-_RELATEDARTICLE = _descriptor.Descriptor(
-  name='RelatedArticle',
-  full_name='stroeer.page.article.v1.RelatedArticle',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='article', full_name='stroeer.page.article.v1.RelatedArticle.article', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='source', full_name='stroeer.page.article.v1.RelatedArticle.source', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=364,
-  serialized_end=486,
-)
-
-_ARTICLEPAGE.fields_by_name['article'].message_type = stroeer_dot_core_dot_v1_dot_article__pb2._ARTICLE
-_ARTICLEPAGE.fields_by_name['related_articles'].message_type = _RELATEDARTICLE
-_ARTICLEPAGE.fields_by_name['stages'].message_type = stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2._STAGE
-_ARTICLEPAGE.fields_by_name['companions'].message_type = stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2._STAGE_ITEM
-_RELATEDARTICLE.fields_by_name['article'].message_type = stroeer_dot_core_dot_v1_dot_article__pb2._ARTICLE
-_RELATEDARTICLE.fields_by_name['source'].enum_type = _RELATEDARTICLESOURCE
-DESCRIPTOR.message_types_by_name['ArticlePage'] = _ARTICLEPAGE
-DESCRIPTOR.message_types_by_name['RelatedArticle'] = _RELATEDARTICLE
-DESCRIPTOR.enum_types_by_name['RelatedArticleSource'] = _RELATEDARTICLESOURCE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_ARTICLEPAGE = DESCRIPTOR.message_types_by_name['ArticlePage']
+_RELATEDARTICLE = DESCRIPTOR.message_types_by_name['RelatedArticle']
 ArticlePage = _reflection.GeneratedProtocolMessageType('ArticlePage', (_message.Message,), {
   'DESCRIPTOR' : _ARTICLEPAGE,
   '__module__' : 'stroeer.page.article.v1.article_page_pb2'
@@ -173,6 +41,14 @@ RelatedArticle = _reflection.GeneratedProtocolMessageType('RelatedArticle', (_me
   })
 _sym_db.RegisterMessage(RelatedArticle)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article'
+  _RELATEDARTICLESOURCE._serialized_start=488
+  _RELATEDARTICLESOURCE._serialized_end=588
+  _ARTICLEPAGE._serialized_start=138
+  _ARTICLEPAGE._serialized_end=362
+  _RELATEDARTICLE._serialized_start=364
+  _RELATEDARTICLE._serialized_end=486
 # @@protoc_insertion_point(module_scope)

@@ -6,7 +6,13 @@ A general [API documentation can be found here](https://stroeer.github.io/tapir/
 
 (Disclaimer: this is my very first python module ever)
 
-# Installation
+# Usage
+
+_pytapir_ is usually distributed via python packages that are hosted on GitHub. We're trying to have the 
+latest version available all the time; but since python is more of a side project we cannot keep that
+promise.
+
+In case this library diverges from the tAPIr-API, please give me (@thisismana) a bump to fix this.
 
 ## `pipenv`
 
@@ -23,7 +29,25 @@ This should go into the `Pipfile`
 pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.3"}
 ```
 
-# Update tapir
+# Build tapir
+
+## dependencies
+
+We're using a _virtual env_, so do the following within the project root after cloning this repo:
+
+```shell 
+$ python3 -m venv pytapir
+$ source pytapir/bin/activate
+$ pip install --requirement requirements.txt
+
+# you can work now, e.g. compile .proto to .py
+$ python3 setup.py protoc
+
+# once your done, deactivate the venv
+$ deactivate
+````
+
+## bump tapir submodule
 
 tapir is mounted as a git submodule
 
@@ -44,7 +68,7 @@ git push
 
 # Release
 
-bump version in [__init__.py](./stroeer/__init__.py)
+bump version in [__init__.py](./stroeer/__init__.py), ideally to match the version of tAPIr.
 
 ```shell
 NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
@@ -73,4 +97,64 @@ if [ ! -z "${GITHUB_TOKEN}" ] ; then
       --data "{\"tag_name\":\"${NEXT_TAG}\",\"generate_release_notes\":true}" \
       https://api.github.com/repos/stroeer/pytapir/releases
 fi
+```
+
+# AWS Lambda Layer
+
+Useful reads:
+
+- [how to build a python lambda layer][howto]
+- [Add library dependencies to layer][deps]
+
+[howto]: https://unbiased-coder.com/create-python-lambda-layer/
+[deps]: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
+
+```shell
+rm -rf python/ || true
+mkdir -p "python"
+# download all requirements into a directory "python" using 
+# a sandboxed local environment that replicates the live AWS Lambda environment almost identically
+# https://github.com/lambci/docker-lambda
+docker run --rm \
+  --volume "${PWD}":/var/task \
+  lambci/lambda:build-python3.8 pip install --requirement requirements.txt --target python
+
+# add our sources
+cp -R stroeer python/
+
+# zip all the things
+zip --recurse-paths --verbose layer.zip python
+
+NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
+
+aws s3 cp layer.zip s3://ci-053041861227-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
+
+# create lambda layer
+aws lambda publish-layer-version \
+  --layer-name pytapir \
+  --description "pytapir ${NEXT_TAG}" \
+  --license-info "MIT" \
+  --content S3Bucket=ci-053041861227-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}.zip \
+  --compatible-runtimes python3.6 python3.7 python3.8 python3.9 \
+  --compatible-architectures "arm64" "x86_64" 
+```
+
+## Local testing lambda and lambda layer
+
+To test, we need:
+- an environment that replicates the AWS environment
+(e.g. don't use native MacOS binaries).
+- our lambda layer mounted
+- our sample code mounted
+
+
+```shell
+export GRPC_ENDPOINT="$(aws ssm get-parameter --name /internal/api/endpoint --with-decryption --query 'Parameter.Value' --output text)"
+export GRPC_AUTHORIZATION="Bearer $(aws ssm get-parameter --name /internal/api/auth.token --with-decryption --query 'Parameter.Value' --output text)"
+docker run --rm \
+  --volume "${PWD}/examples":/var/task:ro \
+  --volume "${PWD}/python":/opt/python:ro \
+  --env GRPC_ENDPOINT \
+  --env GRPC_AUTHORIZATION \
+  lambci/lambda:python3.8 lambda_function.lambda_handler
 ```

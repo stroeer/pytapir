@@ -3,6 +3,7 @@
 # source: stroeer/page/stage/v1/stage.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -15,412 +16,19 @@ from stroeer.core.v1 import article_pb2 as stroeer_dot_core_dot_v1_dot_article__
 from stroeer.core.v1 import shared_pb2 as stroeer_dot_core_dot_v1_dot_shared__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='stroeer/page/stage/v1/stage.proto',
-  package='stroeer.page.stage.v1',
-  syntax='proto3',
-  serialized_options=b'\n\030de.stroeer.page.stage.v1P\001Z/github.com/stroeer/go-tapir/page/stage/v1;stage',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!stroeer/page/stage/v1/stage.proto\x12\x15stroeer.page.stage.v1\x1a\x1dstroeer/core/v1/article.proto\x1a\x1cstroeer/core/v1/shared.proto\"\xfb\x07\n\x05Stage\x12\x41\n\rconfiguration\x18\x01 \x01(\x0b\x32*.stroeer.page.stage.v1.Stage.Configuration\x12\x37\n\x0cstream_items\x18\x02 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\x12:\n\x0f\x63ompanion_items\x18\x03 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\x1a\xb6\x01\n\rConfiguration\x12\x46\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x36.stroeer.page.stage.v1.Stage.Configuration.FieldsEntry\x12.\n\nreferences\x18\x02 \x03(\x0b\x32\x1a.stroeer.core.v1.Reference\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x80\x05\n\x04Item\x12=\n\x06\x66ields\x18\x01 \x03(\x0b\x32-.stroeer.page.stage.v1.Stage.Item.FieldsEntry\x12-\n\x05stage\x18\x02 \x01(\x0b\x32\x1c.stroeer.page.stage.v1.StageH\x00\x12I\n\x0e\x61rticle_teaser\x18\x03 \x01(\x0b\x32/.stroeer.page.stage.v1.Stage.Item.ArticleTeaserH\x00\x12\x42\n\ncommercial\x18\x04 \x01(\x0b\x32,.stroeer.page.stage.v1.Stage.Item.CommercialH\x00\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xb6\x01\n\rArticleTeaser\x12K\n\x06\x66ields\x18\x01 \x03(\x0b\x32;.stroeer.page.stage.v1.Stage.Item.ArticleTeaser.FieldsEntry\x12)\n\x07\x61rticle\x18\x02 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x85\x01\n\nCommercial\x12H\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x38.stroeer.page.stage.v1.Stage.Item.Commercial.FieldsEntry\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\titem_typeBM\n\x18\x64\x65.stroeer.page.stage.v1P\x01Z/github.com/stroeer/go-tapir/page/stage/v1;stageb\x06proto3'
-  ,
-  dependencies=[stroeer_dot_core_dot_v1_dot_article__pb2.DESCRIPTOR,stroeer_dot_core_dot_v1_dot_shared__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!stroeer/page/stage/v1/stage.proto\x12\x15stroeer.page.stage.v1\x1a\x1dstroeer/core/v1/article.proto\x1a\x1cstroeer/core/v1/shared.proto\"\xfb\x07\n\x05Stage\x12\x41\n\rconfiguration\x18\x01 \x01(\x0b\x32*.stroeer.page.stage.v1.Stage.Configuration\x12\x37\n\x0cstream_items\x18\x02 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\x12:\n\x0f\x63ompanion_items\x18\x03 \x03(\x0b\x32!.stroeer.page.stage.v1.Stage.Item\x1a\xb6\x01\n\rConfiguration\x12\x46\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x36.stroeer.page.stage.v1.Stage.Configuration.FieldsEntry\x12.\n\nreferences\x18\x02 \x03(\x0b\x32\x1a.stroeer.core.v1.Reference\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x80\x05\n\x04Item\x12=\n\x06\x66ields\x18\x01 \x03(\x0b\x32-.stroeer.page.stage.v1.Stage.Item.FieldsEntry\x12-\n\x05stage\x18\x02 \x01(\x0b\x32\x1c.stroeer.page.stage.v1.StageH\x00\x12I\n\x0e\x61rticle_teaser\x18\x03 \x01(\x0b\x32/.stroeer.page.stage.v1.Stage.Item.ArticleTeaserH\x00\x12\x42\n\ncommercial\x18\x04 \x01(\x0b\x32,.stroeer.page.stage.v1.Stage.Item.CommercialH\x00\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xb6\x01\n\rArticleTeaser\x12K\n\x06\x66ields\x18\x01 \x03(\x0b\x32;.stroeer.page.stage.v1.Stage.Item.ArticleTeaser.FieldsEntry\x12)\n\x07\x61rticle\x18\x02 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x85\x01\n\nCommercial\x12H\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x38.stroeer.page.stage.v1.Stage.Item.Commercial.FieldsEntry\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\titem_typeBM\n\x18\x64\x65.stroeer.page.stage.v1P\x01Z/github.com/stroeer/go-tapir/page/stage/v1;stageb\x06proto3')
 
 
 
-
-_STAGE_CONFIGURATION_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.page.stage.v1.Stage.Configuration.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.page.stage.v1.Stage.Configuration.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.page.stage.v1.Stage.Configuration.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=453,
-  serialized_end=498,
-)
-
-_STAGE_CONFIGURATION = _descriptor.Descriptor(
-  name='Configuration',
-  full_name='stroeer.page.stage.v1.Stage.Configuration',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.page.stage.v1.Stage.Configuration.fields', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='references', full_name='stroeer.page.stage.v1.Stage.Configuration.references', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STAGE_CONFIGURATION_FIELDSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=316,
-  serialized_end=498,
-)
-
-_STAGE_ITEM_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.page.stage.v1.Stage.Item.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.page.stage.v1.Stage.Item.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.page.stage.v1.Stage.Item.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=453,
-  serialized_end=498,
-)
-
-_STAGE_ITEM_ARTICLETEASER_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=453,
-  serialized_end=498,
-)
-
-_STAGE_ITEM_ARTICLETEASER = _descriptor.Descriptor(
-  name='ArticleTeaser',
-  full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser.fields', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='article', full_name='stroeer.page.stage.v1.Stage.Item.ArticleTeaser.article', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STAGE_ITEM_ARTICLETEASER_FIELDSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=810,
-  serialized_end=992,
-)
-
-_STAGE_ITEM_COMMERCIAL_FIELDSENTRY = _descriptor.Descriptor(
-  name='FieldsEntry',
-  full_name='stroeer.page.stage.v1.Stage.Item.Commercial.FieldsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='stroeer.page.stage.v1.Stage.Item.Commercial.FieldsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='stroeer.page.stage.v1.Stage.Item.Commercial.FieldsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=453,
-  serialized_end=498,
-)
-
-_STAGE_ITEM_COMMERCIAL = _descriptor.Descriptor(
-  name='Commercial',
-  full_name='stroeer.page.stage.v1.Stage.Item.Commercial',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.page.stage.v1.Stage.Item.Commercial.fields', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STAGE_ITEM_COMMERCIAL_FIELDSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=995,
-  serialized_end=1128,
-)
-
-_STAGE_ITEM = _descriptor.Descriptor(
-  name='Item',
-  full_name='stroeer.page.stage.v1.Stage.Item',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='stroeer.page.stage.v1.Stage.Item.fields', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stage', full_name='stroeer.page.stage.v1.Stage.Item.stage', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='article_teaser', full_name='stroeer.page.stage.v1.Stage.Item.article_teaser', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='commercial', full_name='stroeer.page.stage.v1.Stage.Item.commercial', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STAGE_ITEM_FIELDSENTRY, _STAGE_ITEM_ARTICLETEASER, _STAGE_ITEM_COMMERCIAL, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='item_type', full_name='stroeer.page.stage.v1.Stage.Item.item_type',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=501,
-  serialized_end=1141,
-)
-
-_STAGE = _descriptor.Descriptor(
-  name='Stage',
-  full_name='stroeer.page.stage.v1.Stage',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='configuration', full_name='stroeer.page.stage.v1.Stage.configuration', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stream_items', full_name='stroeer.page.stage.v1.Stage.stream_items', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='companion_items', full_name='stroeer.page.stage.v1.Stage.companion_items', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STAGE_CONFIGURATION, _STAGE_ITEM, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=122,
-  serialized_end=1141,
-)
-
-_STAGE_CONFIGURATION_FIELDSENTRY.containing_type = _STAGE_CONFIGURATION
-_STAGE_CONFIGURATION.fields_by_name['fields'].message_type = _STAGE_CONFIGURATION_FIELDSENTRY
-_STAGE_CONFIGURATION.fields_by_name['references'].message_type = stroeer_dot_core_dot_v1_dot_shared__pb2._REFERENCE
-_STAGE_CONFIGURATION.containing_type = _STAGE
-_STAGE_ITEM_FIELDSENTRY.containing_type = _STAGE_ITEM
-_STAGE_ITEM_ARTICLETEASER_FIELDSENTRY.containing_type = _STAGE_ITEM_ARTICLETEASER
-_STAGE_ITEM_ARTICLETEASER.fields_by_name['fields'].message_type = _STAGE_ITEM_ARTICLETEASER_FIELDSENTRY
-_STAGE_ITEM_ARTICLETEASER.fields_by_name['article'].message_type = stroeer_dot_core_dot_v1_dot_article__pb2._ARTICLE
-_STAGE_ITEM_ARTICLETEASER.containing_type = _STAGE_ITEM
-_STAGE_ITEM_COMMERCIAL_FIELDSENTRY.containing_type = _STAGE_ITEM_COMMERCIAL
-_STAGE_ITEM_COMMERCIAL.fields_by_name['fields'].message_type = _STAGE_ITEM_COMMERCIAL_FIELDSENTRY
-_STAGE_ITEM_COMMERCIAL.containing_type = _STAGE_ITEM
-_STAGE_ITEM.fields_by_name['fields'].message_type = _STAGE_ITEM_FIELDSENTRY
-_STAGE_ITEM.fields_by_name['stage'].message_type = _STAGE
-_STAGE_ITEM.fields_by_name['article_teaser'].message_type = _STAGE_ITEM_ARTICLETEASER
-_STAGE_ITEM.fields_by_name['commercial'].message_type = _STAGE_ITEM_COMMERCIAL
-_STAGE_ITEM.containing_type = _STAGE
-_STAGE_ITEM.oneofs_by_name['item_type'].fields.append(
-  _STAGE_ITEM.fields_by_name['stage'])
-_STAGE_ITEM.fields_by_name['stage'].containing_oneof = _STAGE_ITEM.oneofs_by_name['item_type']
-_STAGE_ITEM.oneofs_by_name['item_type'].fields.append(
-  _STAGE_ITEM.fields_by_name['article_teaser'])
-_STAGE_ITEM.fields_by_name['article_teaser'].containing_oneof = _STAGE_ITEM.oneofs_by_name['item_type']
-_STAGE_ITEM.oneofs_by_name['item_type'].fields.append(
-  _STAGE_ITEM.fields_by_name['commercial'])
-_STAGE_ITEM.fields_by_name['commercial'].containing_oneof = _STAGE_ITEM.oneofs_by_name['item_type']
-_STAGE.fields_by_name['configuration'].message_type = _STAGE_CONFIGURATION
-_STAGE.fields_by_name['stream_items'].message_type = _STAGE_ITEM
-_STAGE.fields_by_name['companion_items'].message_type = _STAGE_ITEM
-DESCRIPTOR.message_types_by_name['Stage'] = _STAGE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_STAGE = DESCRIPTOR.message_types_by_name['Stage']
+_STAGE_CONFIGURATION = _STAGE.nested_types_by_name['Configuration']
+_STAGE_CONFIGURATION_FIELDSENTRY = _STAGE_CONFIGURATION.nested_types_by_name['FieldsEntry']
+_STAGE_ITEM = _STAGE.nested_types_by_name['Item']
+_STAGE_ITEM_FIELDSENTRY = _STAGE_ITEM.nested_types_by_name['FieldsEntry']
+_STAGE_ITEM_ARTICLETEASER = _STAGE_ITEM.nested_types_by_name['ArticleTeaser']
+_STAGE_ITEM_ARTICLETEASER_FIELDSENTRY = _STAGE_ITEM_ARTICLETEASER.nested_types_by_name['FieldsEntry']
+_STAGE_ITEM_COMMERCIAL = _STAGE_ITEM.nested_types_by_name['Commercial']
+_STAGE_ITEM_COMMERCIAL_FIELDSENTRY = _STAGE_ITEM_COMMERCIAL.nested_types_by_name['FieldsEntry']
 Stage = _reflection.GeneratedProtocolMessageType('Stage', (_message.Message,), {
 
   'Configuration' : _reflection.GeneratedProtocolMessageType('Configuration', (_message.Message,), {
@@ -492,10 +100,34 @@ _sym_db.RegisterMessage(Stage.Item.ArticleTeaser.FieldsEntry)
 _sym_db.RegisterMessage(Stage.Item.Commercial)
 _sym_db.RegisterMessage(Stage.Item.Commercial.FieldsEntry)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_STAGE_CONFIGURATION_FIELDSENTRY._options = None
-_STAGE_ITEM_FIELDSENTRY._options = None
-_STAGE_ITEM_ARTICLETEASER_FIELDSENTRY._options = None
-_STAGE_ITEM_COMMERCIAL_FIELDSENTRY._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\030de.stroeer.page.stage.v1P\001Z/github.com/stroeer/go-tapir/page/stage/v1;stage'
+  _STAGE_CONFIGURATION_FIELDSENTRY._options = None
+  _STAGE_CONFIGURATION_FIELDSENTRY._serialized_options = b'8\001'
+  _STAGE_ITEM_FIELDSENTRY._options = None
+  _STAGE_ITEM_FIELDSENTRY._serialized_options = b'8\001'
+  _STAGE_ITEM_ARTICLETEASER_FIELDSENTRY._options = None
+  _STAGE_ITEM_ARTICLETEASER_FIELDSENTRY._serialized_options = b'8\001'
+  _STAGE_ITEM_COMMERCIAL_FIELDSENTRY._options = None
+  _STAGE_ITEM_COMMERCIAL_FIELDSENTRY._serialized_options = b'8\001'
+  _STAGE._serialized_start=122
+  _STAGE._serialized_end=1141
+  _STAGE_CONFIGURATION._serialized_start=316
+  _STAGE_CONFIGURATION._serialized_end=498
+  _STAGE_CONFIGURATION_FIELDSENTRY._serialized_start=453
+  _STAGE_CONFIGURATION_FIELDSENTRY._serialized_end=498
+  _STAGE_ITEM._serialized_start=501
+  _STAGE_ITEM._serialized_end=1141
+  _STAGE_ITEM_FIELDSENTRY._serialized_start=453
+  _STAGE_ITEM_FIELDSENTRY._serialized_end=498
+  _STAGE_ITEM_ARTICLETEASER._serialized_start=810
+  _STAGE_ITEM_ARTICLETEASER._serialized_end=992
+  _STAGE_ITEM_ARTICLETEASER_FIELDSENTRY._serialized_start=453
+  _STAGE_ITEM_ARTICLETEASER_FIELDSENTRY._serialized_end=498
+  _STAGE_ITEM_COMMERCIAL._serialized_start=995
+  _STAGE_ITEM_COMMERCIAL._serialized_end=1128
+  _STAGE_ITEM_COMMERCIAL_FIELDSENTRY._serialized_start=453
+  _STAGE_ITEM_COMMERCIAL_FIELDSENTRY._serialized_end=498
 # @@protoc_insertion_point(module_scope)

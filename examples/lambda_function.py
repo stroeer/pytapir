@@ -27,7 +27,7 @@ def handler():
 
         stub: ArticlePageServiceStub = ArticlePageServiceStub(channel)
 
-        metadata = [('authorization', os.getenv('GRPC_AUTHORIZATION', 'VOID')), ('feature-flag', 'body-split')]
+        metadata = [('authorization', os.getenv('GRPC_AUTHORIZATION', 'VOID'))]
         response: GetArticlePageResponse = stub.GetArticlePage(
             request=GetArticlePageRequest(id=91501530),
             metadata=metadata
@@ -53,6 +53,7 @@ related articles
 
 def lambda_handler(event, context):
     handler()
+
 
 if __name__ == '__main__':
     handler()

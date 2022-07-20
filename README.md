@@ -26,8 +26,23 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.26.3"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.29.1"}
 ```
+
+## Lambda layers
+
+Permissions should allow every account within our AWS organization to access the
+pytapir lambda layers.
+
+The lambda layer contains everything you'll need to invoke our gRPC services. See 
+`./examples/` folder for sample code. 
+
+- `pytapir`
+- [`grpcio`](https://pypi.org/project/grpcio/)
+
+| tapir version |                           ARN                           |
+|:-------------:|:-------------------------------------------------------:|
+|    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5` |
 
 # Build tapir
 

@@ -5,12 +5,10 @@ from typing import List
 import grpc
 
 from stroeer.core.v1.article_pb2 import Article
-from stroeer.page.article.v1.article_page_pb2 import \
-    ArticlePage, RelatedArticle
-from stroeer.page.article.v1.article_page_service_pb2 import \
-    GetArticlePageRequest, GetArticlePageResponse
-from stroeer.page.article.v1.article_page_service_pb2_grpc import \
-    ArticlePageServiceStub
+from stroeer.page.article.v1.article_page_pb2 import ArticlePage, RelatedArticle
+from stroeer.page.article.v1.article_page_service_pb2 import GetArticlePageRequest, GetArticlePageResponse
+from stroeer.page.article.v1.article_page_service_pb2_grpc import ArticlePageServiceStub
+
 
 def handler():
     ssl = grpc.ssl_channel_credentials()

@@ -18,7 +18,7 @@ In case this library diverges from the tAPIr-API, please give me (@thisismana) a
 
 [untested]
 
-`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.26.3#egg=requests`
+`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.29.1#egg=pytapir`
 
 ## `pipenv`
 

@@ -41,7 +41,7 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 | tapir version |                           ARN                           |
 |:-------------:|:-------------------------------------------------------:|
 |    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5` |
-|    0.30.0     |                         `todo`                          |
+|    0.30.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6` |
 
 # Build tapir
 
@@ -145,8 +145,8 @@ ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
 aws s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
 
 # configure your aws environment here
-alias AWS='aws'
-# alias AWS='aws-vault exec to -- aws'
+#alias AWS='aws'
+alias AWS='aws-vault exec to -- aws'
 
 # create lambda layer
 layer_version=$(AWS lambda publish-layer-version \
@@ -154,8 +154,8 @@ layer_version=$(AWS lambda publish-layer-version \
   --description "pytapir ${NEXT_TAG}" \
   --license-info "MIT" \
   --content S3Bucket=ci-${ACCOUNT_ID}-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}.zip \
-  --compatible-runtimes python3.6 python3.7 python3.8 python3.9 \
-  --compatible-architectures "arm64" "x86_64" \
+  --compatible-runtimes python3.8 \
+  --compatible-architectures "x86_64" \
   --query "Version")
 
 # allow aws org to access layer

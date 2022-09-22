@@ -16,17 +16,15 @@ In case this library diverges from the tAPIr-API, please give me (@thisismana) a
 
 ## `pipenv`
 
-[untested]
+`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.30.0#egg=requests`
 
-`pipenv install -e git+https://github.com:stroeer/pytapir.git@v0.29.1#egg=pytapir`
-
-## `pipenv`
+## `Pipfile`
 
 This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.29.1"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.30.0"}
 ```
 
 ## Lambda layers
@@ -43,6 +41,7 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 | tapir version |                           ARN                           |
 |:-------------:|:-------------------------------------------------------:|
 |    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5` |
+|    0.30.0     |                         `todo`                          |
 
 # Build tapir
 

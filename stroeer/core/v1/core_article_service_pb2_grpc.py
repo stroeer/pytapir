@@ -9,18 +9,6 @@ from stroeer.core.v1 import core_article_service_pb2 as stroeer_dot_core_dot_v1_
 
 class ArticleServiceStub(object):
     """*
-    ```protobuf
-    service ArticleService {
-    // get a single article by its `article_id`
-    rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
-    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
-    // query multiple articles at once
-    rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
-    // list the available root sections
-    rpc ListSections (google.protobuf.Empty) returns (ListSectionsResponse) {}
-    }
-    ```
     Core service to either query a single article (`rpc GetArticle()`) identified
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
@@ -28,6 +16,8 @@ class ArticleServiceStub(object):
     All results returned from this service are _unfiltered_, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+
+    @CodeBlockStart protobuf
 
     """
 
@@ -61,18 +51,6 @@ class ArticleServiceStub(object):
 
 class ArticleServiceServicer(object):
     """*
-    ```protobuf
-    service ArticleService {
-    // get a single article by its `article_id`
-    rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
-    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
-    // query multiple articles at once
-    rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
-    // list the available root sections
-    rpc ListSections (google.protobuf.Empty) returns (ListSectionsResponse) {}
-    }
-    ```
     Core service to either query a single article (`rpc GetArticle()`) identified
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
@@ -80,6 +58,8 @@ class ArticleServiceServicer(object):
     All results returned from this service are _unfiltered_, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+
+    @CodeBlockStart protobuf
 
     """
 
@@ -141,18 +121,6 @@ def add_ArticleServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ArticleService(object):
     """*
-    ```protobuf
-    service ArticleService {
-    // get a single article by its `article_id`
-    rpc GetArticle (GetArticleRequest) returns (stroeer.core.v1.Article) {}
-    // similar to GetArticle(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetArticles (BatchArticlesRequest) returns (BatchArticlesResponse) {}
-    // query multiple articles at once
-    rpc ListArticles (ListArticlesRequest) returns (ListArticlesResponse) {}
-    // list the available root sections
-    rpc ListSections (google.protobuf.Empty) returns (ListSectionsResponse) {}
-    }
-    ```
     Core service to either query a single article (`rpc GetArticle()`) identified
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
@@ -160,6 +128,8 @@ class ArticleService(object):
     All results returned from this service are _unfiltered_, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+
+    @CodeBlockStart protobuf
 
     """
 

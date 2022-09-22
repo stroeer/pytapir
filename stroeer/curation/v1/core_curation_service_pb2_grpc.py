@@ -7,14 +7,10 @@ from stroeer.curation.v1 import core_curation_service_pb2 as stroeer_dot_curatio
 
 class CurationServiceStub(object):
     """*
-    ```protobuf
-    service CurationService {
-    // fetch a single curation by its `curation_id`
-    rpc GetCuration(GetCurationRequest) returns (GetCurationResponse) {}
-    // similar to GetCuration(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetCuration(BatchGetCurationRequest) returns (BatchGetCurationResponse) {}
-    }
-    ```
+    This services allows to query curations within the CMS. In the CMS domain
+    this is implemented as `Lists` which usually contain one ore more `Articles`.
+
+    @CodeBlockStart protobuf
     """
 
     def __init__(self, channel):
@@ -37,14 +33,10 @@ class CurationServiceStub(object):
 
 class CurationServiceServicer(object):
     """*
-    ```protobuf
-    service CurationService {
-    // fetch a single curation by its `curation_id`
-    rpc GetCuration(GetCurationRequest) returns (GetCurationResponse) {}
-    // similar to GetCuration(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetCuration(BatchGetCurationRequest) returns (BatchGetCurationResponse) {}
-    }
-    ```
+    This services allows to query curations within the CMS. In the CMS domain
+    this is implemented as `Lists` which usually contain one ore more `Articles`.
+
+    @CodeBlockStart protobuf
     """
 
     def GetCuration(self, request, context):
@@ -81,14 +73,10 @@ def add_CurationServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class CurationService(object):
     """*
-    ```protobuf
-    service CurationService {
-    // fetch a single curation by its `curation_id`
-    rpc GetCuration(GetCurationRequest) returns (GetCurationResponse) {}
-    // similar to GetCuration(), but retrieves multiple items at once (max == 100)
-    rpc BatchGetCuration(BatchGetCurationRequest) returns (BatchGetCurationResponse) {}
-    }
-    ```
+    This services allows to query curations within the CMS. In the CMS domain
+    this is implemented as `Lists` which usually contain one ore more `Articles`.
+
+    @CodeBlockStart protobuf
     """
 
     @staticmethod

@@ -24,7 +24,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.30.0"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.32.0"}
 ```
 
 ## Lambda layers
@@ -42,6 +42,7 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 |:-------------:|:-------------------------------------------------------:|
 |    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5` |
 |    0.30.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6` |
+|    0.32.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:7` |
 
 # Build tapir
 

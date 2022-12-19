@@ -143,11 +143,11 @@ zip --recurse-paths --verbose layer.zip python
 NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
 ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
 
-aws s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
-
 # configure your aws environment here
 #alias AWS='aws'
 alias AWS='aws-vault exec to -- aws'
+
+AWS s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
 
 # create lambda layer
 layer_version=$(AWS lambda publish-layer-version \

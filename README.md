@@ -143,14 +143,10 @@ zip --recurse-paths --verbose layer.zip python
 NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
 ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
 
-# configure your aws environment here
-#alias AWS='aws'
-alias AWS='aws-vault exec to -- aws'
-
-AWS s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
+aws s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
 
 # create lambda layer
-layer_version=$(AWS lambda publish-layer-version \
+layer_version=$(aws lambda publish-layer-version \
   --layer-name pytapir \
   --description "pytapir ${NEXT_TAG}" \
   --license-info "MIT" \
@@ -160,9 +156,9 @@ layer_version=$(AWS lambda publish-layer-version \
   --query "Version")
 
 # allow aws org to access layer
-org_id=$(AWS organizations describe-organization --query 'Organization.Id' --output text)
+org_id=$(aws organizations describe-organization --query 'Organization.Id' --output text)
 
-AWS lambda add-layer-version-permission \
+aws lambda add-layer-version-permission \
   --layer-name pytapir \
   --statement-id xaccount \
   --action lambda:GetLayerVersion \

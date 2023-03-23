@@ -1,3 +1,4 @@
 [submodule "tapir"]
 	path = tapir
 	url = git@github.com:stroeer/tapir.git
+	branch = main

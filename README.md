@@ -70,13 +70,13 @@ tapir is mounted as a git submodule
 
 # bump tapir to latest
 git submodule update --init --recursive
-git submodule foreach git pull origin master
+git submodule foreach git pull origin main
 
 # commit changes
 git add tapir
 
 # if there are changes, commit and push them:
-git commit -m "bumped tapir to latest (origin/master)"
+git commit -m "bumped tapir to latest (origin/main)"
 git push
 
 ```

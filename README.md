@@ -8,7 +8,7 @@ A general [API documentation can be found here](https://stroeer.github.io/tapir/
 
 # Usage
 
-_pytapir_ is usually distributed via python packages that are hosted on GitHub. We're trying to have the 
+_pytapir_ is usually distributed via python packages that are hosted on GitHub. We're trying to have the
 latest version available all the time; but since python is more of a side project we cannot keep that
 promise.
 
@@ -32,17 +32,18 @@ pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.39.0"}
 Permissions should allow every account within our AWS organization to access the
 pytapir lambda layers.
 
-The lambda layer contains everything you'll need to invoke our gRPC services. See 
-`./examples/` folder for sample code. 
+The lambda layer contains everything you'll need to invoke our gRPC services. See
+`./examples/` folder for sample code.
 
 - `pytapir`
 - [`grpcio`](https://pypi.org/project/grpcio/)
 
-| tapir version |                           ARN                           |
-|:-------------:|:-------------------------------------------------------:|
-|    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5` |
-|    0.30.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6` |
-|    0.33.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8` |
+| tapir version |                           ARN                            |
+|:-------------:|:--------------------------------------------------------:|
+|    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`  |
+|    0.30.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`  |
+|    0.33.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`  |
+|    0.39.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11` |
 
 # Build tapir
 
@@ -122,6 +123,7 @@ Useful reads:
 - [Add library dependencies to layer][deps]
 
 [howto]: https://unbiased-coder.com/create-python-lambda-layer/
+
 [deps]: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
 
 ```shell
@@ -170,11 +172,11 @@ aws lambda add-layer-version-permission \
 ## Local testing lambda and lambda layer
 
 To test, we need:
+
 - an environment that replicates the AWS environment
-(e.g. don't use native MacOS binaries).
+  (e.g. don't use native MacOS binaries).
 - our lambda layer mounted
 - our sample code mounted
-
 
 ```shell
 export GRPC_ENDPOINT="$(aws ssm get-parameter --name /internal/api/endpoint --with-decryption --query 'Parameter.Value' --output text)"

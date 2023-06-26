@@ -24,7 +24,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.33.1"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.39.0"}
 ```
 
 ## Lambda layers

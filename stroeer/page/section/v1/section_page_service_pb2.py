@@ -14,14 +14,14 @@ _sym_db = _symbol_database.Default()
 from stroeer.page.section.v1 import section_page_pb2 as stroeer_dot_page_dot_section_dot_v1_dot_section__page__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2stroeer/page/section/v1/section_page_service.proto\x12\x17stroeer.page.section.v1\x1a*stroeer/page/section/v1/section_page.proto\";\n\x15GetSectionPageRequest\x12\x14\n\x0csection_path\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\"\x97\x02\n\x16GetSectionPageResponse\x12:\n\x0csection_page\x18\x01 \x01(\x0b\x32$.stroeer.page.section.v1.SectionPage\x12\x13\n\x0btotal_pages\x18\x02 \x01(\x05\x12W\n\x0fpagination_type\x18\x03 \x01(\x0e\x32>.stroeer.page.section.v1.GetSectionPageResponse.PaginationType\"S\n\x0ePaginationType\x12\x1f\n\x1bPAGINATION_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x46IXED_BLOCK\x10\x01\x12\x0f\n\x0bGHOST_BLOCK\x10\x02\x32\x89\x01\n\x12SectionPageService\x12s\n\x0eGetSectionPage\x12..stroeer.page.section.v1.GetSectionPageRequest\x1a/.stroeer.page.section.v1.GetSectionPageResponse\"\x00\x42S\n\x1a\x64\x65.stroeer.page.section.v1P\x01Z3github.com/stroeer/go-tapir/page/section/v1;sectionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2stroeer/page/section/v1/section_page_service.proto\x12\x17stroeer.page.section.v1\x1a*stroeer/page/section/v1/section_page.proto\";\n\x15GetSectionPageRequest\x12\x14\n\x0csection_path\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\"\x97\x02\n\x16GetSectionPageResponse\x12:\n\x0csection_page\x18\x01 \x01(\x0b\x32$.stroeer.page.section.v1.SectionPage\x12\x13\n\x0btotal_pages\x18\x02 \x01(\x05\x12W\n\x0fpagination_type\x18\x03 \x01(\x0e\x32>.stroeer.page.section.v1.GetSectionPageResponse.PaginationType\"S\n\x0ePaginationType\x12\x1f\n\x1bPAGINATION_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x46IXED_BLOCK\x10\x01\x12\x0f\n\x0bGHOST_BLOCK\x10\x02\x32\x89\x01\n\x12SectionPageService\x12s\n\x0eGetSectionPage\x12..stroeer.page.section.v1.GetSectionPageRequest\x1a/.stroeer.page.section.v1.GetSectionPageResponse\"\x00\x42\x35Z3github.com/stroeer/go-tapir/page/section/v1;sectionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'stroeer.page.section.v1.section_page_service_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\032de.stroeer.page.section.v1P\001Z3github.com/stroeer/go-tapir/page/section/v1;section'
+  DESCRIPTOR._serialized_options = b'Z3github.com/stroeer/go-tapir/page/section/v1;section'
   _GETSECTIONPAGEREQUEST._serialized_start=123
   _GETSECTIONPAGEREQUEST._serialized_end=182
   _GETSECTIONPAGERESPONSE._serialized_start=185

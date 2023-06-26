@@ -14,14 +14,14 @@ _sym_db = _symbol_database.Default()
 from stroeer.page.article.v1 import article_page_pb2 as stroeer_dot_page_dot_article_dot_v1_dot_article__page__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2stroeer/page/article/v1/article_page_service.proto\x12\x17stroeer.page.article.v1\x1a*stroeer/page/article/v1/article_page.proto\"#\n\x15GetArticlePageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"T\n\x16GetArticlePageResponse\x12:\n\x0c\x61rticle_page\x18\x01 \x01(\x0b\x32$.stroeer.page.article.v1.ArticlePage2\x89\x01\n\x12\x41rticlePageService\x12s\n\x0eGetArticlePage\x12..stroeer.page.article.v1.GetArticlePageRequest\x1a/.stroeer.page.article.v1.GetArticlePageResponse\"\x00\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2stroeer/page/article/v1/article_page_service.proto\x12\x17stroeer.page.article.v1\x1a*stroeer/page/article/v1/article_page.proto\"#\n\x15GetArticlePageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"T\n\x16GetArticlePageResponse\x12:\n\x0c\x61rticle_page\x18\x01 \x01(\x0b\x32$.stroeer.page.article.v1.ArticlePage2\x89\x01\n\x12\x41rticlePageService\x12s\n\x0eGetArticlePage\x12..stroeer.page.article.v1.GetArticlePageRequest\x1a/.stroeer.page.article.v1.GetArticlePageResponse\"\x00\x42\x35Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'stroeer.page.article.v1.article_page_service_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article'
+  DESCRIPTOR._serialized_options = b'Z3github.com/stroeer/go-tapir/page/article/v1;article'
   _GETARTICLEPAGEREQUEST._serialized_start=123
   _GETARTICLEPAGEREQUEST._serialized_end=158
   _GETARTICLEPAGERESPONSE._serialized_start=160

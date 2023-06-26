@@ -16,18 +16,18 @@ from stroeer.core.v1 import shared_pb2 as stroeer_dot_core_dot_v1_dot_shared__pb
 from stroeer.page.stage.v1 import stage_pb2 as stroeer_dot_page_dot_stage_dot_v1_dot_stage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a\x1cstroeer/core/v1/shared.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xde\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\x12\x33\n\x0fnavigation_menu\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\"z\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42S\n\x1a\x64\x65.stroeer.page.article.v1P\x01Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*stroeer/page/article/v1/article_page.proto\x12\x17stroeer.page.article.v1\x1a\x1dstroeer/core/v1/article.proto\x1a\x1cstroeer/core/v1/shared.proto\x1a!stroeer/page/stage/v1/stage.proto\"\xde\x01\n\x0b\x41rticlePage\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12\x41\n\x10related_articles\x18\x02 \x03(\x0b\x32\'.stroeer.page.article.v1.RelatedArticle\x12,\n\x06stages\x18\x03 \x03(\x0b\x32\x1c.stroeer.page.stage.v1.Stage\x12\x33\n\x0fnavigation_menu\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\"\x9a\x01\n\x0eRelatedArticle\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.stroeer.core.v1.Article\x12=\n\x06source\x18\x02 \x01(\x0e\x32-.stroeer.page.article.v1.RelatedArticleSource\x12\x1e\n\x16related_article_source\x18\x03 \x01(\t*d\n\x14RelatedArticleSource\x12&\n\"RELATED_ARTICLE_SOURCE_UNSPECIFIED\x10\x00\x12$\n RELATED_ARTICLE_SOURCE_EDITORIAL\x10\x01\x42\x35Z3github.com/stroeer/go-tapir/page/article/v1;articleb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'stroeer.page.article.v1.article_page_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\032de.stroeer.page.article.v1P\001Z3github.com/stroeer/go-tapir/page/article/v1;article'
-  _RELATEDARTICLESOURCE._serialized_start=516
-  _RELATEDARTICLESOURCE._serialized_end=616
+  DESCRIPTOR._serialized_options = b'Z3github.com/stroeer/go-tapir/page/article/v1;article'
+  _RELATEDARTICLESOURCE._serialized_start=549
+  _RELATEDARTICLESOURCE._serialized_end=649
   _ARTICLEPAGE._serialized_start=168
   _ARTICLEPAGE._serialized_end=390
-  _RELATEDARTICLE._serialized_start=392
-  _RELATEDARTICLE._serialized_end=514
+  _RELATEDARTICLE._serialized_start=393
+  _RELATEDARTICLE._serialized_end=547
 # @@protoc_insertion_point(module_scope)

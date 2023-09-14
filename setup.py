@@ -11,8 +11,8 @@ tests_require = []
 dev_require = []
 install_requires = [
     'setuptools',
-    'protobuf>=3.19.1',
-    'grpcio>=1.42.0',
+    'protobuf>=4.24.3',
+    'grpcio>=1.58.0',
 ]
 
 extras_require = {

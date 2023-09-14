@@ -2,5 +2,5 @@ build/
 dist/
 .idea
 
-python
 pytapir
+*_layer.zip

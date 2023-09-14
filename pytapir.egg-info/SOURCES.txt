@@ -1,6 +1,5 @@
 LICENSE
 README.md
-pyproject.toml
 setup.py
 pytapir.egg-info/PKG-INFO
 pytapir.egg-info/SOURCES.txt

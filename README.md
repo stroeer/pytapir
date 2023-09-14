@@ -38,13 +38,15 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 - `pytapir`
 - [`grpcio`](https://pypi.org/project/grpcio/)
 
-| tapir version |                           ARN                            |
-|:-------------:|:--------------------------------------------------------:|
-|    0.29.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`  |
-|    0.30.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`  |
-|    0.33.1     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`  |
-|    0.39.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11` |
-|    0.40.0     | `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12` |
+| tapir version | Python Version | Arch   |                              ARN                              |
+|:-------------:|----------------|--------|:-------------------------------------------------------------:|
+|    0.29.1     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`    |
+|    0.30.0     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`    |
+|    0.33.1     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`    |
+|    0.39.0     | 3.8            | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11`    |
+|    0.40.0     | 3.8            | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12`    |
+|    0.41.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:1` |
+|    0.41.0     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:1` |
 
 # Build tapir
 
@@ -95,6 +97,7 @@ git fetch --all --tags --prune
 git switch main
 
 # compile protobuf sources to python
+python3 setup.py install
 python3 setup.py protoc
 
 # commit changes
@@ -128,46 +131,47 @@ Useful reads:
 [deps]: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
 
 ```shell
-rm -rf python/ || true
-mkdir -p "python"
-# download all requirements into a directory "python" using 
-# a sandboxed local environment that replicates the live AWS Lambda environment almost identically
-# https://github.com/lambci/docker-lambda
-docker run --rm \
-  --volume "${PWD}":/var/task \
-  lambci/lambda:build-python3.8 pip install --requirement requirements.txt --target python
 
-# add our sources
-cp -R stroeer python/
-
-# zip all the things
-zip --recurse-paths --verbose layer.zip python
-
+PYTHON_VERSION='3.11'
 NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
 ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
 
-aws s3 cp layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}.zip
+for ARCH in arm64 x86_64 ; do
+  docker buildx build --load --platform linux/${ARCH} --tag "${NEXT_TAG}:${ARCH}" .
 
-# create lambda layer
-layer_version=$(aws lambda publish-layer-version \
-  --layer-name pytapir \
-  --description "pytapir ${NEXT_TAG}" \
-  --license-info "MIT" \
-  --content S3Bucket=ci-${ACCOUNT_ID}-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}.zip \
-  --compatible-runtimes python3.8 \
-  --compatible-architectures "x86_64" \
-  --query "Version")
+  docker run --platform linux/${ARCH} --rm --entrypoint cat "${NEXT_TAG}:${ARCH}" layer.zip > ${ARCH}_layer.zip
+  
+  aws s3 cp ${ARCH}_layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}_${ARCH}.zip
+  
+  if [ "$ARCH" = "x86_64" ] ; then
+    ARCH_Pretty='Amd64'
+  else
+    ARCH_Pretty='Arm64'
+  fi
+  
+  # create lambda layer
+  layer_version=$(aws lambda publish-layer-version \
+    --layer-name PyTapir-${ARCH_Pretty} \
+    --description "PyTapir ${NEXT_TAG}" \
+    --license-info "MIT" \
+    --content S3Bucket=ci-${ACCOUNT_ID}-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}_${ARCH}.zip \
+    --compatible-runtimes python${PYTHON_VERSION} \
+    --compatible-architectures ${ARCH} \
+    --query "Version")
+  
+  # allow aws org to access layer
+  org_id=$(aws organizations describe-organization --query 'Organization.Id' --output text)
+  
+  aws lambda add-layer-version-permission \
+    --layer-name PyTapir-${ARCH_Pretty} \
+    --statement-id xaccount \
+    --action lambda:GetLayerVersion \
+    --organization-id "${org_id}" \
+    --principal '*' \
+    --version-number "${layer_version}" 
+done  
+  
 
-# allow aws org to access layer
-org_id=$(aws organizations describe-organization --query 'Organization.Id' --output text)
-
-aws lambda add-layer-version-permission \
-  --layer-name pytapir \
-  --statement-id xaccount \
-  --action lambda:GetLayerVersion \
-  --organization-id "${org_id}" \
-  --principal '*' \
-  --version-number "${layer_version}" 
 ```
 
 ## Local testing lambda and lambda layer

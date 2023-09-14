@@ -15,7 +15,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from stroeer.core.v1 import shared_pb2 as stroeer_dot_core_dot_v1_dot_shared__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dstroeer/core/v1/article.proto\x12\x0fstroeer.core.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cstroeer/core/v1/shared.proto\"\xe8\x16\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x04type\x18\x02 \x01(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12\x32\n\x08sub_type\x18\x03 \x01(\x0e\x32 .stroeer.core.v1.Article.SubType\x12\x30\n\x0csection_tree\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\x12\x34\n\x06\x66ields\x18\x05 \x03(\x0b\x32$.stroeer.core.v1.Article.FieldsEntry\x12-\n\x06\x62odies\x18\x06 \x03(\x0b\x32\x1d.stroeer.core.v1.Article.Body\x12\x33\n\x08metadata\x18\x07 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x12\x32\n\x08\x65lements\x18\x08 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x12\x32\n\x08keywords\x18\t \x03(\x0b\x32 .stroeer.core.v1.Article.Keyword\x12\x0f\n\x07onwards\x18\n \x03(\x03\x12\x14\n\x08\x65ntities\x18\x64 \x03(\tB\x02\x18\x01\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x97\x06\n\x07\x45lement\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32%.stroeer.core.v1.Article.Element.Type\x12<\n\trelations\x18\x02 \x03(\x0e\x32).stroeer.core.v1.Article.Element.Relation\x12\x36\n\x06\x61ssets\x18\x03 \x03(\x0b\x32&.stroeer.core.v1.Article.Element.Asset\x12\x32\n\x08\x63hildren\x18\x04 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a\xca\x02\n\x05\x41sset\x12\x39\n\x04type\x18\x01 \x01(\x0e\x32+.stroeer.core.v1.Article.Element.Asset.Type\x12\x42\n\x06\x66ields\x18\x02 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Element.Asset.FieldsEntry\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\t\n\x05VIDEO\x10\x02\x12\x12\n\x0e\x45XTERNAL_VIDEO\x10\x03\x12\x0c\n\x08METADATA\x10\x04\x12\x08\n\x04LINK\x10\x05\"\x95\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\t\n\x05IMAGE\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\n\n\x06OEMBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\n\n\x06\x41GENCY\x10\x07\x12\x15\n\x11\x45\x44GE_SIDE_INCLUDE\x10\x08\x12\x0c\n\x08\x43ITATION\x10\t\"H\n\x08Relation\x12\x18\n\x14RELATION_UNSPECIFIED\x10\x00\x12\n\n\x06OPENER\x10\x01\x12\n\n\x06TEASER\x10\x02\x12\n\n\x06SOCIAL\x10\x03\x1a\xef\x03\n\x04\x42ody\x12\x38\n\x08\x63hildren\x18\x01 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x30\n\x04type\x18\x02 \x01(\x0e\x32\".stroeer.core.v1.Article.Body.Type\x1a\x87\x02\n\x08\x42odyNode\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x42\n\x06\x66ields\x18\x03 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Body.BodyNode.FieldsEntry\x12\x38\n\x08\x63hildren\x18\x04 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x32\n\x08\x65lements\x18\x05 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42ODY\x10\x01\x12\x13\n\x0f\x41RTICLE_SOURCES\x10\x02\x12\x0e\n\nDISCLAIMER\x10\x03\x12\r\n\tTRUST_BOX\x10\x04\x12\x15\n\x11TABLE_OF_CONTENTS\x10\x05\x1a\xab\x05\n\x08Metadata\x12\x36\n\x05state\x18\x01 \x01(\x0e\x32\'.stroeer.core.v1.Article.Metadata.State\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublish_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bupdate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13transformation_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15transformation_errors\x18\x07 \x01(\x03\x12:\n\x16last_modification_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x0c\x65vent_source\x18\t \x01(\x0e\x32-.stroeer.core.v1.Article.Metadata.EventSource\x12\x11\n\tseo_score\x18\n \x01(\x01\x12\x16\n\x0epublication_id\x18\x0b \x01(\x03\"E\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0b\n\x07\x44\x45LETED\x10\x02\x12\t\n\x05\x44RAFT\x10\x03\"[\n\x0b\x45ventSource\x12\x1c\n\x18\x45VENT_SOURCE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIMARY\x10\x01\x12\r\n\tSECONDARY\x10\x02\x12\x12\n\x0e\x43ONTENT_ENGINE\x10\x03\x1a\x35\n\x07Keyword\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\r\n\x05score\x18\x03 \x01(\x02\"\x93\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\r\n\x05IMAGE\x10\x02\x1a\x02\x08\x01\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\t\n\x05\x45MBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\x0e\n\x06\x41GENCY\x10\x07\x1a\x02\x08\x01\x12\x0c\n\x08\x45XTERNAL\x10\x08\x12\x0c\n\x08INTERNAL\x10\x64\"\xde\x01\n\x07SubType\x12\x18\n\x14SUB_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04NEWS\x10\x01\x12\n\n\x06\x43OLUMN\x10\x02\x12\x0e\n\nCOMMENTARY\x10\x03\x12\r\n\tINTERVIEW\x10\x04\x12\x0f\n\x0b\x43ONTROVERSY\x10\x05\x12\x10\n\x0cTAGESANBRUCH\x10\x06\x12\r\n\tEVERGREEN\x10\x07\x12\x11\n\rAGENCY_IMPORT\x10\x08\x12\x0f\n\x0b\x41\x44VERTORIAL\x10\t\x12\x08\n\x04QUIZ\x10\n\x12\x08\n\x04GAME\x10\x0b\x12\x0e\n\nCOMPLIANCE\x10\x0c\x12\n\n\x06RECIPE\x10\rB*Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dstroeer/core/v1/article.proto\x12\x0fstroeer.core.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cstroeer/core/v1/shared.proto\"\xed\x17\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x04type\x18\x02 \x01(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12\x32\n\x08sub_type\x18\x03 \x01(\x0e\x32 .stroeer.core.v1.Article.SubType\x12\x30\n\x0csection_tree\x18\x04 \x01(\x0b\x32\x1a.stroeer.core.v1.Reference\x12\x34\n\x06\x66ields\x18\x05 \x03(\x0b\x32$.stroeer.core.v1.Article.FieldsEntry\x12-\n\x06\x62odies\x18\x06 \x03(\x0b\x32\x1d.stroeer.core.v1.Article.Body\x12\x33\n\x08metadata\x18\x07 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x12\x32\n\x08\x65lements\x18\x08 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x12\x32\n\x08keywords\x18\t \x03(\x0b\x32 .stroeer.core.v1.Article.Keyword\x12\x0f\n\x07onwards\x18\n \x03(\x03\x12\x38\n\x08variants\x18\x0b \x03(\x0b\x32&.stroeer.core.v1.Article.VariantsEntry\x12\x14\n\x08\x65ntities\x18\x64 \x03(\tB\x02\x18\x01\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1aI\n\rVariantsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.stroeer.core.v1.Article:\x02\x38\x01\x1a\x97\x06\n\x07\x45lement\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32%.stroeer.core.v1.Article.Element.Type\x12<\n\trelations\x18\x02 \x03(\x0e\x32).stroeer.core.v1.Article.Element.Relation\x12\x36\n\x06\x61ssets\x18\x03 \x03(\x0b\x32&.stroeer.core.v1.Article.Element.Asset\x12\x32\n\x08\x63hildren\x18\x04 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a\xca\x02\n\x05\x41sset\x12\x39\n\x04type\x18\x01 \x01(\x0e\x32+.stroeer.core.v1.Article.Element.Asset.Type\x12\x42\n\x06\x66ields\x18\x02 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Element.Asset.FieldsEntry\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.stroeer.core.v1.Article.Metadata\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05IMAGE\x10\x01\x12\t\n\x05VIDEO\x10\x02\x12\x12\n\x0e\x45XTERNAL_VIDEO\x10\x03\x12\x0c\n\x08METADATA\x10\x04\x12\x08\n\x04LINK\x10\x05\"\x95\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\t\n\x05IMAGE\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\n\n\x06OEMBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\n\n\x06\x41GENCY\x10\x07\x12\x15\n\x11\x45\x44GE_SIDE_INCLUDE\x10\x08\x12\x0c\n\x08\x43ITATION\x10\t\"H\n\x08Relation\x12\x18\n\x14RELATION_UNSPECIFIED\x10\x00\x12\n\n\x06OPENER\x10\x01\x12\n\n\x06TEASER\x10\x02\x12\n\n\x06SOCIAL\x10\x03\x1a\xef\x03\n\x04\x42ody\x12\x38\n\x08\x63hildren\x18\x01 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x30\n\x04type\x18\x02 \x01(\x0e\x32\".stroeer.core.v1.Article.Body.Type\x1a\x87\x02\n\x08\x42odyNode\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x42\n\x06\x66ields\x18\x03 \x03(\x0b\x32\x32.stroeer.core.v1.Article.Body.BodyNode.FieldsEntry\x12\x38\n\x08\x63hildren\x18\x04 \x03(\x0b\x32&.stroeer.core.v1.Article.Body.BodyNode\x12\x32\n\x08\x65lements\x18\x05 \x03(\x0b\x32 .stroeer.core.v1.Article.Element\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42ODY\x10\x01\x12\x13\n\x0f\x41RTICLE_SOURCES\x10\x02\x12\x0e\n\nDISCLAIMER\x10\x03\x12\r\n\tTRUST_BOX\x10\x04\x12\x15\n\x11TABLE_OF_CONTENTS\x10\x05\x1a\xab\x05\n\x08Metadata\x12\x36\n\x05state\x18\x01 \x01(\x0e\x32\'.stroeer.core.v1.Article.Metadata.State\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublish_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bupdate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13transformation_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15transformation_errors\x18\x07 \x01(\x03\x12:\n\x16last_modification_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x0c\x65vent_source\x18\t \x01(\x0e\x32-.stroeer.core.v1.Article.Metadata.EventSource\x12\x11\n\tseo_score\x18\n \x01(\x01\x12\x16\n\x0epublication_id\x18\x0b \x01(\x03\"E\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0b\n\x07\x44\x45LETED\x10\x02\x12\t\n\x05\x44RAFT\x10\x03\"[\n\x0b\x45ventSource\x12\x1c\n\x18\x45VENT_SOURCE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIMARY\x10\x01\x12\r\n\tSECONDARY\x10\x02\x12\x12\n\x0e\x43ONTENT_ENGINE\x10\x03\x1a\x35\n\x07Keyword\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\r\n\x05score\x18\x03 \x01(\x02\"\x93\x01\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\r\n\x05IMAGE\x10\x02\x1a\x02\x08\x01\x12\t\n\x05VIDEO\x10\x03\x12\x0b\n\x07GALLERY\x10\x04\x12\t\n\x05\x45MBED\x10\x05\x12\n\n\x06\x41UTHOR\x10\x06\x12\x0e\n\x06\x41GENCY\x10\x07\x1a\x02\x08\x01\x12\x0c\n\x08\x45XTERNAL\x10\x08\x12\x0c\n\x08INTERNAL\x10\x64\"\xde\x01\n\x07SubType\x12\x18\n\x14SUB_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04NEWS\x10\x01\x12\n\n\x06\x43OLUMN\x10\x02\x12\x0e\n\nCOMMENTARY\x10\x03\x12\r\n\tINTERVIEW\x10\x04\x12\x0f\n\x0b\x43ONTROVERSY\x10\x05\x12\x10\n\x0cTAGESANBRUCH\x10\x06\x12\r\n\tEVERGREEN\x10\x07\x12\x11\n\rAGENCY_IMPORT\x10\x08\x12\x0f\n\x0b\x41\x44VERTORIAL\x10\t\x12\x08\n\x04QUIZ\x10\n\x12\x08\n\x04GAME\x10\x0b\x12\x0e\n\nCOMPLIANCE\x10\x0c\x12\n\n\x06RECIPE\x10\rB*Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'stroeer.core.v1.article_pb2', globals())
@@ -25,6 +25,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z(github.com/stroeer/go-tapir/core/v1;core'
   _ARTICLE_FIELDSENTRY._options = None
   _ARTICLE_FIELDSENTRY._serialized_options = b'8\001'
+  _ARTICLE_VARIANTSENTRY._options = None
+  _ARTICLE_VARIANTSENTRY._serialized_options = b'8\001'
   _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._options = None
   _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._serialized_options = b'8\001'
   _ARTICLE_BODY_BODYNODE_FIELDSENTRY._options = None
@@ -36,39 +38,41 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ARTICLE.fields_by_name['entities']._options = None
   _ARTICLE.fields_by_name['entities']._serialized_options = b'\030\001'
   _ARTICLE._serialized_start=114
-  _ARTICLE._serialized_end=3034
-  _ARTICLE_FIELDSENTRY._serialized_start=581
-  _ARTICLE_FIELDSENTRY._serialized_end=626
-  _ARTICLE_ELEMENT._serialized_start=629
-  _ARTICLE_ELEMENT._serialized_end=1420
-  _ARTICLE_ELEMENT_ASSET._serialized_start=864
-  _ARTICLE_ELEMENT_ASSET._serialized_end=1194
-  _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._serialized_start=581
-  _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._serialized_end=626
-  _ARTICLE_ELEMENT_ASSET_TYPE._serialized_start=1100
-  _ARTICLE_ELEMENT_ASSET_TYPE._serialized_end=1194
-  _ARTICLE_ELEMENT_TYPE._serialized_start=1197
-  _ARTICLE_ELEMENT_TYPE._serialized_end=1346
-  _ARTICLE_ELEMENT_RELATION._serialized_start=1348
-  _ARTICLE_ELEMENT_RELATION._serialized_end=1420
-  _ARTICLE_BODY._serialized_start=1423
-  _ARTICLE_BODY._serialized_end=1918
-  _ARTICLE_BODY_BODYNODE._serialized_start=1540
-  _ARTICLE_BODY_BODYNODE._serialized_end=1803
-  _ARTICLE_BODY_BODYNODE_FIELDSENTRY._serialized_start=581
-  _ARTICLE_BODY_BODYNODE_FIELDSENTRY._serialized_end=626
-  _ARTICLE_BODY_TYPE._serialized_start=1805
-  _ARTICLE_BODY_TYPE._serialized_end=1918
-  _ARTICLE_METADATA._serialized_start=1921
-  _ARTICLE_METADATA._serialized_end=2604
-  _ARTICLE_METADATA_STATE._serialized_start=2442
-  _ARTICLE_METADATA_STATE._serialized_end=2511
-  _ARTICLE_METADATA_EVENTSOURCE._serialized_start=2513
-  _ARTICLE_METADATA_EVENTSOURCE._serialized_end=2604
-  _ARTICLE_KEYWORD._serialized_start=2606
-  _ARTICLE_KEYWORD._serialized_end=2659
-  _ARTICLE_TYPE._serialized_start=2662
-  _ARTICLE_TYPE._serialized_end=2809
-  _ARTICLE_SUBTYPE._serialized_start=2812
-  _ARTICLE_SUBTYPE._serialized_end=3034
+  _ARTICLE._serialized_end=3167
+  _ARTICLE_FIELDSENTRY._serialized_start=639
+  _ARTICLE_FIELDSENTRY._serialized_end=684
+  _ARTICLE_VARIANTSENTRY._serialized_start=686
+  _ARTICLE_VARIANTSENTRY._serialized_end=759
+  _ARTICLE_ELEMENT._serialized_start=762
+  _ARTICLE_ELEMENT._serialized_end=1553
+  _ARTICLE_ELEMENT_ASSET._serialized_start=997
+  _ARTICLE_ELEMENT_ASSET._serialized_end=1327
+  _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._serialized_start=639
+  _ARTICLE_ELEMENT_ASSET_FIELDSENTRY._serialized_end=684
+  _ARTICLE_ELEMENT_ASSET_TYPE._serialized_start=1233
+  _ARTICLE_ELEMENT_ASSET_TYPE._serialized_end=1327
+  _ARTICLE_ELEMENT_TYPE._serialized_start=1330
+  _ARTICLE_ELEMENT_TYPE._serialized_end=1479
+  _ARTICLE_ELEMENT_RELATION._serialized_start=1481
+  _ARTICLE_ELEMENT_RELATION._serialized_end=1553
+  _ARTICLE_BODY._serialized_start=1556
+  _ARTICLE_BODY._serialized_end=2051
+  _ARTICLE_BODY_BODYNODE._serialized_start=1673
+  _ARTICLE_BODY_BODYNODE._serialized_end=1936
+  _ARTICLE_BODY_BODYNODE_FIELDSENTRY._serialized_start=639
+  _ARTICLE_BODY_BODYNODE_FIELDSENTRY._serialized_end=684
+  _ARTICLE_BODY_TYPE._serialized_start=1938
+  _ARTICLE_BODY_TYPE._serialized_end=2051
+  _ARTICLE_METADATA._serialized_start=2054
+  _ARTICLE_METADATA._serialized_end=2737
+  _ARTICLE_METADATA_STATE._serialized_start=2575
+  _ARTICLE_METADATA_STATE._serialized_end=2644
+  _ARTICLE_METADATA_EVENTSOURCE._serialized_start=2646
+  _ARTICLE_METADATA_EVENTSOURCE._serialized_end=2737
+  _ARTICLE_KEYWORD._serialized_start=2739
+  _ARTICLE_KEYWORD._serialized_end=2792
+  _ARTICLE_TYPE._serialized_start=2795
+  _ARTICLE_TYPE._serialized_end=2942
+  _ARTICLE_SUBTYPE._serialized_start=2945
+  _ARTICLE_SUBTYPE._serialized_end=3167
 # @@protoc_insertion_point(module_scope)

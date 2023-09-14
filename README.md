@@ -72,6 +72,7 @@ tapir is mounted as a git submodule
 
 # bump tapir to latest
 git submodule update --init --recursive
+git submodule foreach git fetch --all --tags --prune
 git submodule foreach git pull origin main
 
 # commit changes
@@ -85,10 +86,9 @@ git push
 
 # Release
 
-bump version in [__init__.py](./stroeer/__init__.py), ideally to match the version of tAPIr.
-
 ```shell
-NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
+NEXT_TAG=$(git submodule foreach git describe --tags | grep -v 'Entering' | awk -F- '//{print $1}' | cut -c 2-)
+sed -i "" "s/__version__ = .*/__version__ = \"${NEXT_TAG}\"/" stroeer/__init__.py
 
 # pull latest from remote
 git fetch --all --tags --prune

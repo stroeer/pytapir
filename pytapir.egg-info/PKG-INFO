@@ -1,9 +1,9 @@
 Metadata-Version: 2.1
 Name: pytapir
-Version: 0.41.0
+Version: 0.41.1
 Summary: pytapir — tapir python packages
 Home-page: https://pytapir.io/
-Download-URL: https://github.com/stroeer/pytapir/archive/0.41.0.tar.gz
+Download-URL: https://github.com/stroeer/pytapir/archive/0.41.1.tar.gz
 Author: thisismana
 Author-email: none@example.com
 License: Apache2
@@ -121,6 +121,7 @@ git fetch --all --tags --prune
 git switch main
 
 # compile protobuf sources to python
+python3 setup.py install
 python3 setup.py protoc
 
 # commit changes

@@ -1,9 +1,9 @@
 Metadata-Version: 2.1
 Name: pytapir
-Version: 0.41.1
+Version: 0.42.1
 Summary: pytapir — tapir python packages
 Home-page: https://pytapir.io/
-Download-URL: https://github.com/stroeer/pytapir/archive/0.41.1.tar.gz
+Download-URL: https://github.com/stroeer/pytapir/archive/0.42.1.tar.gz
 Author: thisismana
 Author-email: none@example.com
 License: Apache2
@@ -18,9 +18,12 @@ Classifier: License :: OSI Approved :: Apache 2
 Classifier: Topic :: Api :: Grpc
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: protobuf>=4.24.3
+Requires-Dist: grpcio>=1.58.0
 Provides-Extra: dev
 Provides-Extra: test
-License-File: LICENSE
 
 # PyTapir
 

@@ -38,17 +38,19 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 - `pytapir`
 - [`grpcio`](https://pypi.org/project/grpcio/)
 
-| tapir version | Python Version | Arch   |                              ARN                              |
-|:-------------:|----------------|--------|:-------------------------------------------------------------:|
-|    0.29.1     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`    |
-|    0.30.0     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`    |
-|    0.33.1     | 3.8            | x86_64 |    `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`    |
-|    0.39.0     | 3.8            | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11`    |
-|    0.40.0     | 3.8            | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12`    |
-|    0.41.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:1` |
-|    0.41.0     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:1` |
-|    0.42.1     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:2` |
-|    0.42.1     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:2` |
+| tapir version | Python Version | Arch   |                                ARN                                |
+|:-------------:|----------------|--------|:-----------------------------------------------------------------:|
+|    0.29.1     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`      |
+|    0.30.0     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`      |
+|    0.33.1     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`      |
+|    0.39.0     | 3.8            | x86_64 |     `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11`      |
+|    0.40.0     | 3.8            | x86_64 |     `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12`      |
+|    0.41.0     | 3.11           | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:1`   |
+|    0.41.0     | 3.11           | amd64  |   `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:1`   |
+|    0.42.2     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:1` |
+|    0.42.2     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:1` |
+|    0.42.2     | 3.12           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:1` |
+|    0.42.2     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:1` |
 
 # Build tapir
 

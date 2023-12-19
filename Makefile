@@ -16,7 +16,7 @@ bump_tapir:
 
 release:
 	sed -i "" "s/__version__ = .*/__version__ = \"$(NEXT_TAG)\"/" stroeer/__init__.py
-	
+
 	# pull latest from remote
 	git fetch --all --tags --prune
 	git switch main
@@ -40,7 +40,7 @@ release:
 	      --header "Authorization: token $${GITHUB_TOKEN}" 	\
 	      --header "Accept: application/vnd.github.v3+json"	\
 	      --data "{\"tag_name\":\"$(NEXT_TAG)\",\"generate_release_notes\":true}" \
-	      https://api.github.com/repos/stroeer/pytapir/releases \
+	      https://api.github.com/repos/stroeer/pytapir/releases ; \
 	fi
 
 lambda_layer:
@@ -56,13 +56,10 @@ lambda_layer:
 	    	LAYER_FILE_ZIP="layer_$${ARCH}_$${PYTHON_VERSION}_layer.zip" ; \
 	    docker run --platform linux/$${ARCH} --rm --entrypoint cat "$(NEXT_TAG):$${ARCH}" layer.zip > $${LAYER_FILE_ZIP}  ; \
 	    aws s3 cp $${LAYER_FILE_ZIP} s3://ci-$(ACCOUNT_ID)-eu-west-1/pytapir/$${LAYER_FILE_ZIP} ; \
-	    if [ "$$ARCH" = "x86_64" ] ; then \
-	      ARCH_Pretty='Amd64' ; \
-	    else \
-	      ARCH_Pretty='Arm64' ; \
-	    fi ; \
+	    if [ "$${ARCH}" = "x86_64" ] ; then LAYER_NAME="Amd64" ; else LAYER_NAME="Arm64" ; fi ; \
+		LAYER_NAME="PyTapir-$$(echo $${PYTHON_VERSION} | cut -c -1,3-)-$${LAYER_NAME}" ; \
 	    layer_version=$$(aws lambda publish-layer-version \
-	      --layer-name PyTapir-$${ARCH_Pretty} \
+	      --layer-name $${LAYER_NAME} \
 	      --description "PyTapir $(NEXT_TAG)" \
 	      --license-info "MIT" \
 	      --content S3Bucket=ci-$(ACCOUNT_ID)-eu-west-1,S3Key=pytapir/$${LAYER_FILE_ZIP} \
@@ -71,7 +68,7 @@ lambda_layer:
 	      --query "Version") ; \
 	    org_id=$$(aws organizations describe-organization --query 'Organization.Id' --output text) ; \
 	    aws lambda add-layer-version-permission \
-	      --layer-name PyTapir-$${ARCH_Pretty} \
+	      --layer-name $${LAYER_NAME} \
 	      --statement-id xaccount \
 	      --action lambda:GetLayerVersion \
 	      --organization-id "$${org_id}" \

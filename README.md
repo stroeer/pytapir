@@ -47,6 +47,8 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 |    0.40.0     | 3.8            | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12`    |
 |    0.41.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:1` |
 |    0.41.0     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:1` |
+|    0.42.1     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:2` |
+|    0.42.1     | 3.11           | amd64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:2` |
 
 # Build tapir
 
@@ -71,7 +73,6 @@ $ deactivate
 tapir is mounted as a git submodule
 
 ```shell
-
 # bump tapir to latest
 git submodule update --init --recursive
 git submodule foreach git fetch --all --tags --prune
@@ -83,7 +84,6 @@ git add tapir
 # if there are changes, commit and push them:
 git commit -m "bumped tapir to latest (origin/main)"
 git push
-
 ```
 
 # Release
@@ -132,46 +132,56 @@ Useful reads:
 
 ```shell
 
-PYTHON_VERSION='3.11'
+
 NEXT_TAG=$(echo "import stroeer; print(stroeer.__version__)" | python3)
 ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
-
-for ARCH in arm64 x86_64 ; do
-  docker buildx build --load --platform linux/${ARCH} --tag "${NEXT_TAG}:${ARCH}" .
-
-  docker run --platform linux/${ARCH} --rm --entrypoint cat "${NEXT_TAG}:${ARCH}" layer.zip > ${ARCH}_layer.zip
+for PYTHON_VERSION in 3.11 3.12 ; do
+  for ARCH in arm64 x86_64 ; do
+    docker buildx build --load --platform linux/${ARCH} --build-arg="PYTHON_VERSION=${PYTHON_VERSION}" --tag "${NEXT_TAG}:${ARCH}" .
   
-  aws s3 cp ${ARCH}_layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}_${ARCH}.zip
-  
-  if [ "$ARCH" = "x86_64" ] ; then
-    ARCH_Pretty='Amd64'
-  else
-    ARCH_Pretty='Arm64'
-  fi
-  
-  # create lambda layer
-  layer_version=$(aws lambda publish-layer-version \
-    --layer-name PyTapir-${ARCH_Pretty} \
-    --description "PyTapir ${NEXT_TAG}" \
-    --license-info "MIT" \
-    --content S3Bucket=ci-${ACCOUNT_ID}-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}_${ARCH}.zip \
-    --compatible-runtimes python${PYTHON_VERSION} \
-    --compatible-architectures ${ARCH} \
-    --query "Version")
-  
-  # allow aws org to access layer
-  org_id=$(aws organizations describe-organization --query 'Organization.Id' --output text)
-  
-  aws lambda add-layer-version-permission \
-    --layer-name PyTapir-${ARCH_Pretty} \
-    --statement-id xaccount \
-    --action lambda:GetLayerVersion \
-    --organization-id "${org_id}" \
-    --principal '*' \
-    --version-number "${layer_version}" 
+    docker run --platform linux/${ARCH} --rm --entrypoint cat "${NEXT_TAG}:${ARCH}" layer.zip > ${ARCH}_layer.zip
+    
+    aws s3 cp ${ARCH}_layer.zip s3://ci-${ACCOUNT_ID}-eu-west-1/pytapir/layer_${NEXT_TAG}_${ARCH}.zip
+    
+    if [ "$ARCH" = "x86_64" ] ; then
+      ARCH_Pretty='Amd64'
+    else
+      ARCH_Pretty='Arm64'
+    fi
+    
+    # create lambda layer
+    layer_version=$(aws lambda publish-layer-version \
+      --layer-name PyTapir-${ARCH_Pretty} \
+      --description "PyTapir ${NEXT_TAG}" \
+      --license-info "MIT" \
+      --content S3Bucket=ci-${ACCOUNT_ID}-eu-west-1,S3Key=pytapir/layer_${NEXT_TAG}_${ARCH}.zip \
+      --compatible-runtimes python${PYTHON_VERSION} \
+      --compatible-architectures ${ARCH} \
+      --query "Version")
+    
+    # allow aws org to access layer
+    org_id=$(aws organizations describe-organization --query 'Organization.Id' --output text)
+    
+    aws lambda add-layer-version-permission \
+      --layer-name PyTapir-${ARCH_Pretty} \
+      --statement-id xaccount \
+      --action lambda:GetLayerVersion \
+      --organization-id "${org_id}" \
+      --principal '*' \
+      --version-number "${layer_version}" 
+  done  
 done  
-  
+```
 
+# Release 2024 version
+
+```shell
+# update submodule
+make bump_tapir
+# create python github release
+make release
+# build lambda layer for python 3.11/3.12 for amd64/arm64
+make lambda_layer
 ```
 
 ## Local testing lambda and lambda layer

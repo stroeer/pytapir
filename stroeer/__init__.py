@@ -2,6 +2,6 @@
 pytapir — tapir python packages
 """
 
-__version__ = "0.42.2"
+__version__ = "0.44.1"
 __author__ = 'thisismana'
 __licence__ = 'Apache2'

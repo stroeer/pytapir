@@ -40,10 +40,10 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 
 | tapir version | Python Version | Arch   |                                ARN                                |
 |:-------------:|----------------|--------|:-----------------------------------------------------------------:|
-|    0.45.0     | 3.11           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:2` |
-|    0.45.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:2` |
-|    0.45.0     | 3.12           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:2` |
-|    0.45.0     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:2` |
+|    0.45.0     | 3.11           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:3` |
+|    0.45.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:3` |
+|    0.45.0     | 3.12           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:3` |
+|    0.45.0     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:3` |
 
 # Build tapir
 

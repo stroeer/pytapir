@@ -79,15 +79,15 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 We're using a _virtual env_, so do the following within the project root after cloning this repo:
 
 ```shell 
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install --requirement requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install --requirement requirements.txt
 
 # you can work now, e.g. compile .proto to .py
-$ python3 setup.py protoc
+python3 setup.py protoc
 
 # once your done, deactivate the venv
-$ deactivate
+deactivate
 ````
 
 ## bump tapir submodule

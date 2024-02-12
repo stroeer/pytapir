@@ -1,5 +1,5 @@
-NEXT_TAG 	:= $(shell git submodule foreach git describe --tags | grep -v 'Entering' | awk -F- '//{print $$1}' | cut -c 2-)
-ACCOUNT_ID 	:= $(eval ACCOUNT_ID := $(shell aws --output text sts get-caller-identity --query "Account"))$(ACCOUNT_ID)
+NEXT_TAG 	= $(shell git submodule foreach git describe --tags | grep -v 'Entering' | awk -F- '//{print $$1}' | cut -c 2-)
+ACCOUNT_ID 	= $(eval ACCOUNT_ID := $(shell aws --output text sts get-caller-identity --query "Account"))$(ACCOUNT_ID)
 
 bump_tapir:
 	# bump tapir to latest
@@ -14,7 +14,7 @@ bump_tapir:
 	git commit -m "bumped tapir to latest (origin/main)"
 	git push
 
-release:
+release: check-env
 	sed -i "" "s/__version__ = .*/__version__ = \"$(NEXT_TAG)\"/" stroeer/__init__.py
 
 	# pull latest from remote
@@ -76,3 +76,8 @@ lambda_layer:
 	      --version-number "$${layer_version}" ; \
 	  done ; \
 	done
+
+check-env:
+ifndef GITHUB_TOKEN
+	$(error GITHUB_TOKEN is undefined)
+endif

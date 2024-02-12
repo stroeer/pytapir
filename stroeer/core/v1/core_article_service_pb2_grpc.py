@@ -13,9 +13,10 @@ class ArticleServiceStub(object):
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
 
-    All results returned from this service are _unfiltered_, hence they may contain
+    All results returned from this service are _unfiltered_ by default, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+    This behaviour can be changed by providing a [`RequestSettings`](#requestsettings) object.
 
     @CodeBlockStart protobuf
 
@@ -55,9 +56,10 @@ class ArticleServiceServicer(object):
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
 
-    All results returned from this service are _unfiltered_, hence they may contain
+    All results returned from this service are _unfiltered_ by default, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+    This behaviour can be changed by providing a [`RequestSettings`](#requestsettings) object.
 
     @CodeBlockStart protobuf
 
@@ -125,9 +127,10 @@ class ArticleService(object):
     by its id or to query multiple articles (`rpc ListArticles()`) by providing
     a query.
 
-    All results returned from this service are _unfiltered_, hence they may contain
+    All results returned from this service are _unfiltered_ by default, hence they may contain
     [`elements`](element.html) that are *expired*, *not yet valid* or whose [`state`](metadata.html#state)
     is not `PUBLISHED`.
+    This behaviour can be changed by providing a [`RequestSettings`](#requestsettings) object.
 
     @CodeBlockStart protobuf
 

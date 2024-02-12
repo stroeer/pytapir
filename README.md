@@ -24,7 +24,7 @@ This should go into the `Pipfile`
 
 ```shell
 [packages]
-pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.40.0"}
+pytapir = { git = "git@github.com:stroeer/pytapir.git", ref = "v0.45.0"}
 ```
 
 ## Lambda layers
@@ -40,21 +40,10 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 
 | tapir version | Python Version | Arch   |                                ARN                                |
 |:-------------:|----------------|--------|:-----------------------------------------------------------------:|
-|    0.29.1     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:5`      |
-|    0.30.0     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:6`      |
-|    0.33.1     | 3.8            | x86_64 |      `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:8`      |
-|    0.39.0     | 3.8            | x86_64 |     `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:11`      |
-|    0.40.0     | 3.8            | x86_64 |     `arn:aws:lambda:eu-west-1:053041861227:layer:pytapir:12`      |
-|    0.41.0     | 3.11           | x86_64 |   `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Amd64:1`   |
-|    0.41.0     | 3.11           | arm64  |   `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-Arm64:1`   |
-|    0.42.2     | 3.11           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:1` |
-|    0.42.2     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:1` |
-|    0.42.2     | 3.12           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:1` |
-|    0.42.2     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:1` |
-|    0.44.1     | 3.11           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:2` |
-|    0.44.1     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:2` |
-|    0.44.1     | 3.12           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:2` |
-|    0.44.1     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:2` |
+|    0.45.0     | 3.11           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Arm64:2` |
+|    0.45.0     | 3.11           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-311-Amd64:2` |
+|    0.45.0     | 3.12           | arm64  | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Arm64:2` |
+|    0.45.0     | 3.12           | x86_64 | `arn:aws:lambda:eu-west-1:053041861227:layer:PyTapir-312-Amd64:2` |
 
 # Build tapir
 
@@ -63,15 +52,15 @@ The lambda layer contains everything you'll need to invoke our gRPC services. Se
 We're using a _virtual env_, so do the following within the project root after cloning this repo:
 
 ```shell 
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install --requirement requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install --requirement requirements.txt
 
 # you can work now, e.g. compile .proto to .py
-$ python3 setup.py protoc
+python3 setup.py protoc
 
 # once your done, deactivate the venv
-$ deactivate
+deactivate
 ````
 
 ## bump tapir submodule
@@ -94,35 +83,10 @@ git push
 
 # Release
 
+You have to set an environment variable to create a proper GitHub release.
+
 ```shell
-NEXT_TAG=$(git submodule foreach git describe --tags | grep -v 'Entering' | awk -F- '//{print $1}' | cut -c 2-)
-sed -i "" "s/__version__ = .*/__version__ = \"${NEXT_TAG}\"/" stroeer/__init__.py
-
-# pull latest from remote
-git fetch --all --tags --prune
-git switch main
-
-# compile protobuf sources to python
-python3 setup.py install
-python3 setup.py protoc
-
-# commit changes
-git commit -a -m "release version ${NEXT_TAG}"
-
-# tag commit
-git tag -a "${NEXT_TAG}" -m "${NEXT_TAG}"
-
-# push tag
-git push origin ${NEXT_TAG}
-
-# release commit
-if [ ! -z "${GITHUB_TOKEN}" ] ; then
-    curl -X POST \
-      --header "Authorization: token ${GITHUB_TOKEN}" 	\
-      --header "Accept: application/vnd.github.v3+json"	\
-      --data "{\"tag_name\":\"${NEXT_TAG}\",\"generate_release_notes\":true}" \
-      https://api.github.com/repos/stroeer/pytapir/releases
-fi
+make release GITHUB_TOKEN=xxxx
 ```
 
 # AWS Lambda Layer

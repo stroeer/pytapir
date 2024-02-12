@@ -17,7 +17,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from stroeer.core.v1 import article_pb2 as stroeer_dot_core_dot_v1_dot_article__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*stroeer/core/v1/core_article_service.proto\x12\x0fstroeer.core.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dstroeer/core/v1/article.proto\"\x1f\n\x11GetArticleRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"&\n\x17\x42\x61tchGetArticlesRequest\x12\x0b\n\x03ids\x18\x01 \x03(\x03\"F\n\x18\x42\x61tchGetArticlesResponse\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.stroeer.core.v1.Article\"\xa7\x07\n\x13ListArticlesRequest\x12\x39\n\x05query\x18\x01 \x01(\x0b\x32*.stroeer.core.v1.ListArticlesRequest.Query\x12=\n\x07\x66ilters\x18\x02 \x01(\x0b\x32,.stroeer.core.v1.ListArticlesRequest.Filters\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x1a\xfc\x03\n\x05Query\x12\x0c\n\x04path\x18\x01 \x01(\t\x12=\n\x04type\x18\x02 \x01(\x0e\x32/.stroeer.core.v1.ListArticlesRequest.Query.Type\x12\x42\n\x07sort_by\x18\x03 \x01(\x0e\x32\x31.stroeer.core.v1.ListArticlesRequest.Query.SortBy\x12?\n\x05order\x18\x04 \x01(\x0e\x32\x30.stroeer.core.v1.ListArticlesRequest.Query.Order\x12-\n\tfrom_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"@\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cHOME_SECTION\x10\x01\x12\x10\n\x0cROOT_SECTION\x10\x02\"D\n\x06SortBy\x12\x17\n\x13SORT_BY_UNSPECIFIED\x10\x00\x12\x0f\n\x0bUPDATE_TIME\x10\x01\x12\x10\n\x0cPUBLISH_TIME\x10\x02\"=\n\x05Order\x12\x15\n\x11ORDER_UNSPECIFIED\x10\x00\x12\r\n\tASCENDING\x10\x01\x12\x0e\n\nDESCENDING\x10\x02\x1a\xef\x01\n\x07\x46ilters\x12\x34\n\rtype_includes\x18\x01 \x03(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12\x34\n\rtype_excludes\x18\x02 \x03(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12;\n\x11sub_type_includes\x18\x03 \x03(\x0e\x32 .stroeer.core.v1.Article.SubType\x12;\n\x11sub_type_excludes\x18\x04 \x03(\x0e\x32 .stroeer.core.v1.Article.SubType\"[\n\x14ListArticlesResponse\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.stroeer.core.v1.Article\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"(\n\x14ListSectionsResponse\x12\x10\n\x08sections\x18\x01 \x03(\t2\xf9\x02\n\x0e\x41rticleService\x12L\n\nGetArticle\x12\".stroeer.core.v1.GetArticleRequest\x1a\x18.stroeer.core.v1.Article\"\x00\x12i\n\x10\x42\x61tchGetArticles\x12(.stroeer.core.v1.BatchGetArticlesRequest\x1a).stroeer.core.v1.BatchGetArticlesResponse\"\x00\x12]\n\x0cListArticles\x12$.stroeer.core.v1.ListArticlesRequest\x1a%.stroeer.core.v1.ListArticlesResponse\"\x00\x12O\n\x0cListSections\x12\x16.google.protobuf.Empty\x1a%.stroeer.core.v1.ListSectionsResponse\"\x00\x42*Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*stroeer/core/v1/core_article_service.proto\x12\x0fstroeer.core.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dstroeer/core/v1/article.proto\"[\n\x11GetArticleRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12:\n\x10request_settings\x18\x02 \x01(\x0b\x32 .stroeer.core.v1.RequestSettings\"b\n\x17\x42\x61tchGetArticlesRequest\x12\x0b\n\x03ids\x18\x01 \x03(\x03\x12:\n\x10request_settings\x18\x02 \x01(\x0b\x32 .stroeer.core.v1.RequestSettings\"F\n\x18\x42\x61tchGetArticlesResponse\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.stroeer.core.v1.Article\"\xe3\x07\n\x13ListArticlesRequest\x12\x39\n\x05query\x18\x01 \x01(\x0b\x32*.stroeer.core.v1.ListArticlesRequest.Query\x12=\n\x07\x66ilters\x18\x02 \x01(\x0b\x32,.stroeer.core.v1.ListArticlesRequest.Filters\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12:\n\x10request_settings\x18\x05 \x01(\x0b\x32 .stroeer.core.v1.RequestSettings\x1a\xfc\x03\n\x05Query\x12\x0c\n\x04path\x18\x01 \x01(\t\x12=\n\x04type\x18\x02 \x01(\x0e\x32/.stroeer.core.v1.ListArticlesRequest.Query.Type\x12\x42\n\x07sort_by\x18\x03 \x01(\x0e\x32\x31.stroeer.core.v1.ListArticlesRequest.Query.SortBy\x12?\n\x05order\x18\x04 \x01(\x0e\x32\x30.stroeer.core.v1.ListArticlesRequest.Query.Order\x12-\n\tfrom_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"@\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cHOME_SECTION\x10\x01\x12\x10\n\x0cROOT_SECTION\x10\x02\"D\n\x06SortBy\x12\x17\n\x13SORT_BY_UNSPECIFIED\x10\x00\x12\x0f\n\x0bUPDATE_TIME\x10\x01\x12\x10\n\x0cPUBLISH_TIME\x10\x02\"=\n\x05Order\x12\x15\n\x11ORDER_UNSPECIFIED\x10\x00\x12\r\n\tASCENDING\x10\x01\x12\x0e\n\nDESCENDING\x10\x02\x1a\xef\x01\n\x07\x46ilters\x12\x34\n\rtype_includes\x18\x01 \x03(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12\x34\n\rtype_excludes\x18\x02 \x03(\x0e\x32\x1d.stroeer.core.v1.Article.Type\x12;\n\x11sub_type_includes\x18\x03 \x03(\x0e\x32 .stroeer.core.v1.Article.SubType\x12;\n\x11sub_type_excludes\x18\x04 \x03(\x0e\x32 .stroeer.core.v1.Article.SubType\"\xc5\x04\n\x0fRequestSettings\x12K\n\x11\x61rticle_view_mode\x18\x01 \x01(\x0e\x32\x30.stroeer.core.v1.RequestSettings.ArticleViewMode\x12J\n\x10\x61rticle_validity\x18\x02 \x01(\x0e\x32\x30.stroeer.core.v1.RequestSettings.ArticleValidity\x12J\n\x10\x65lement_validity\x18\x03 \x01(\x0e\x32\x30.stroeer.core.v1.RequestSettings.ElementValidity\"q\n\x0f\x41rticleViewMode\x12!\n\x1d\x41RTICLE_VIEW_MODE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41RTICLE_VIEW_MODE_DEFAULT\x10\x01\x12\x1c\n\x18\x41RTICLE_VIEW_MODE_TEASER\x10\x02\"l\n\x0f\x41rticleValidity\x12 \n\x1c\x41RTICLE_VALIDITY_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x41RTICLE_VALIDITY_VALID\x10\x01\x12\x1b\n\x17\x41RTICLE_VALIDITY_IGNORE\x10\x02\"l\n\x0f\x45lementValidity\x12 \n\x1c\x45LEMENT_VALIDITY_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x45LEMENT_VALIDITY_VALID\x10\x01\x12\x1b\n\x17\x45LEMENT_VALIDITY_IGNORE\x10\x02\"[\n\x14ListArticlesResponse\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.stroeer.core.v1.Article\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"(\n\x14ListSectionsResponse\x12\x10\n\x08sections\x18\x01 \x03(\t2\xf9\x02\n\x0e\x41rticleService\x12L\n\nGetArticle\x12\".stroeer.core.v1.GetArticleRequest\x1a\x18.stroeer.core.v1.Article\"\x00\x12i\n\x10\x42\x61tchGetArticles\x12(.stroeer.core.v1.BatchGetArticlesRequest\x1a).stroeer.core.v1.BatchGetArticlesResponse\"\x00\x12]\n\x0cListArticles\x12$.stroeer.core.v1.ListArticlesRequest\x1a%.stroeer.core.v1.ListArticlesResponse\"\x00\x12O\n\x0cListSections\x12\x16.google.protobuf.Empty\x1a%.stroeer.core.v1.ListSectionsResponse\"\x00\x42*Z(github.com/stroeer/go-tapir/core/v1;coreb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,27 +26,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z(github.com/stroeer/go-tapir/core/v1;core'
   _globals['_GETARTICLEREQUEST']._serialized_start=156
-  _globals['_GETARTICLEREQUEST']._serialized_end=187
-  _globals['_BATCHGETARTICLESREQUEST']._serialized_start=189
-  _globals['_BATCHGETARTICLESREQUEST']._serialized_end=227
-  _globals['_BATCHGETARTICLESRESPONSE']._serialized_start=229
-  _globals['_BATCHGETARTICLESRESPONSE']._serialized_end=299
-  _globals['_LISTARTICLESREQUEST']._serialized_start=302
-  _globals['_LISTARTICLESREQUEST']._serialized_end=1237
-  _globals['_LISTARTICLESREQUEST_QUERY']._serialized_start=487
-  _globals['_LISTARTICLESREQUEST_QUERY']._serialized_end=995
-  _globals['_LISTARTICLESREQUEST_QUERY_TYPE']._serialized_start=798
-  _globals['_LISTARTICLESREQUEST_QUERY_TYPE']._serialized_end=862
-  _globals['_LISTARTICLESREQUEST_QUERY_SORTBY']._serialized_start=864
-  _globals['_LISTARTICLESREQUEST_QUERY_SORTBY']._serialized_end=932
-  _globals['_LISTARTICLESREQUEST_QUERY_ORDER']._serialized_start=934
-  _globals['_LISTARTICLESREQUEST_QUERY_ORDER']._serialized_end=995
-  _globals['_LISTARTICLESREQUEST_FILTERS']._serialized_start=998
-  _globals['_LISTARTICLESREQUEST_FILTERS']._serialized_end=1237
-  _globals['_LISTARTICLESRESPONSE']._serialized_start=1239
-  _globals['_LISTARTICLESRESPONSE']._serialized_end=1330
-  _globals['_LISTSECTIONSRESPONSE']._serialized_start=1332
-  _globals['_LISTSECTIONSRESPONSE']._serialized_end=1372
-  _globals['_ARTICLESERVICE']._serialized_start=1375
-  _globals['_ARTICLESERVICE']._serialized_end=1752
+  _globals['_GETARTICLEREQUEST']._serialized_end=247
+  _globals['_BATCHGETARTICLESREQUEST']._serialized_start=249
+  _globals['_BATCHGETARTICLESREQUEST']._serialized_end=347
+  _globals['_BATCHGETARTICLESRESPONSE']._serialized_start=349
+  _globals['_BATCHGETARTICLESRESPONSE']._serialized_end=419
+  _globals['_LISTARTICLESREQUEST']._serialized_start=422
+  _globals['_LISTARTICLESREQUEST']._serialized_end=1417
+  _globals['_LISTARTICLESREQUEST_QUERY']._serialized_start=667
+  _globals['_LISTARTICLESREQUEST_QUERY']._serialized_end=1175
+  _globals['_LISTARTICLESREQUEST_QUERY_TYPE']._serialized_start=978
+  _globals['_LISTARTICLESREQUEST_QUERY_TYPE']._serialized_end=1042
+  _globals['_LISTARTICLESREQUEST_QUERY_SORTBY']._serialized_start=1044
+  _globals['_LISTARTICLESREQUEST_QUERY_SORTBY']._serialized_end=1112
+  _globals['_LISTARTICLESREQUEST_QUERY_ORDER']._serialized_start=1114
+  _globals['_LISTARTICLESREQUEST_QUERY_ORDER']._serialized_end=1175
+  _globals['_LISTARTICLESREQUEST_FILTERS']._serialized_start=1178
+  _globals['_LISTARTICLESREQUEST_FILTERS']._serialized_end=1417
+  _globals['_REQUESTSETTINGS']._serialized_start=1420
+  _globals['_REQUESTSETTINGS']._serialized_end=2001
+  _globals['_REQUESTSETTINGS_ARTICLEVIEWMODE']._serialized_start=1668
+  _globals['_REQUESTSETTINGS_ARTICLEVIEWMODE']._serialized_end=1781
+  _globals['_REQUESTSETTINGS_ARTICLEVALIDITY']._serialized_start=1783
+  _globals['_REQUESTSETTINGS_ARTICLEVALIDITY']._serialized_end=1891
+  _globals['_REQUESTSETTINGS_ELEMENTVALIDITY']._serialized_start=1893
+  _globals['_REQUESTSETTINGS_ELEMENTVALIDITY']._serialized_end=2001
+  _globals['_LISTARTICLESRESPONSE']._serialized_start=2003
+  _globals['_LISTARTICLESRESPONSE']._serialized_end=2094
+  _globals['_LISTSECTIONSRESPONSE']._serialized_start=2096
+  _globals['_LISTSECTIONSRESPONSE']._serialized_end=2136
+  _globals['_ARTICLESERVICE']._serialized_start=2139
+  _globals['_ARTICLESERVICE']._serialized_end=2516
 # @@protoc_insertion_point(module_scope)
